@@ -5,4 +5,5 @@ ErrorEvent::ErrorEvent(std::tm &timeStamp, int64_t code, std::string &error) : B
 
 void ErrorEvent::Act() {
     // TODO: implement!!
+    std::cout<<"ErrorEvent playing\n";
 }

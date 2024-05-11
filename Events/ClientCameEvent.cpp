@@ -4,5 +4,5 @@ ClientCameEvent::ClientCameEvent(std::tm &timeStamp, int64_t code, std::string &
                                                                                                           code, name) {}
 
 void ClientCameEvent::Act() {
-
+    std::cout<<"ClientCameEvent playing\n";
 }

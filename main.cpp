@@ -6,11 +6,21 @@
 
 int main(int argc, char* argv[]) {
     try {
+        // TODO: ?std::tm заменить на более легковсный класс - нам нужны только минуты и часы
         // Парсим аргументы командной строки. Если формат неправильный или файла нет, мы выводим справку как надо вызывать
         ParserConsole parser_console = ParserConsole(argc, argv);
         auto path = parser_console.GetInputFile();
         std::cout<<path<<"\n";
         ParserFile parser_file = ParserFile(path);
+        auto q = parser_file.GetInputEventsQueue();
+        // TODO: Создать окружение на основе объектов полученных от парсинга
+        // TODO: вывод ка в задаче
+        while (!q.empty()) {
+            auto ev = q.front();
+            q.pop();
+            ev->Act();
+            delete ev;
+        }
 //        auto q = parser_file.GetEventsQueue();
 //        while (!q.empty()) {
 //            for (auto s: q.front()) {

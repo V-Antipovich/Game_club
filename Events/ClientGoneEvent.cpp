@@ -5,4 +5,5 @@ ClientGoneEvent::ClientGoneEvent(std::tm &timeStamp, int64_t code, std::string &
 
 void ClientGoneEvent::Act() {
     // TODO: implement
+    std::cout<<"ClientGoneEvent playing\n";
 }

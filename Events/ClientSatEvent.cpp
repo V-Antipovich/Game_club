@@ -5,4 +5,5 @@ ClientSatEvent::ClientSatEvent(std::tm &timeStamp, int64_t code, std::string &na
 
 void ClientSatEvent::Act() {
     // TODO: implement
+    std::cout<<"ClientSatEvent playing\n";
 }

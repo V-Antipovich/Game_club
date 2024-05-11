@@ -5,4 +5,5 @@ ClientWaitingEvent::ClientWaitingEvent(std::tm &timeStamp, int64_t code, std::st
 
 void ClientWaitingEvent::Act() {
     // TODO: implement
+    std::cout<<"ClientWaitingEvent playing\n";
 }

@@ -18,6 +18,11 @@ bool ParserFile::is_code_valid(int64_t code) {
     return it != allowed_codes.end();
 }
 
+//void ParserFile::ConvertStringTimeStamp(std::string& stringTimeStamp, std::tm& timeStamp) {
+//    // TODO: валидировать время
+//    strptime(stringTimeStamp.c_str(), parseFormat, &timeStamp);
+//}
+
 ParserFile::ParserFile(std::string& path) {
     std::ifstream in;
     in.open(path);
@@ -27,7 +32,7 @@ ParserFile::ParserFile(std::string& path) {
         std::string raw_start;
         std::string raw_end;
         std::string clientName;
-        std::string timeStamp;
+        std::string stringTimeStamp;
         in >> tablesNum; // TODO: ее сначала надо в виде строки
         if (tablesNum <= 0) {
             // TODO: многабукав в константы + тут надо выплевывать ошибку с завершением программы
@@ -51,16 +56,24 @@ ParserFile::ParserFile(std::string& path) {
 
         std::queue<std::vector<std::string>> q;
         std::unordered_map<std::string, std::string> extra;
+        std::tm eventTime = {};
         // TODO: внедрить фабрику
-//        auto eventsMap =
-        while (in>>timeStamp>>eventType>>clientName) {
+        auto eventsMap = CreateEventsMap();
+        while (in>>stringTimeStamp>>eventType>>clientName) {
             extra.clear();
+            eventTime = {};
+            extra[nameKey] = clientName;
             // TODO: валидируем: надо cin.getline вообще
             // TODO: Стол номера не больше чем надо
             // TODO: Последовательные события проверка
             if (eventType==2) {
                 in >> tableNum;
+                extra[tableNumKey] = std::to_string(tableNum);
             }
+            strptime(stringTimeStamp.c_str(), parseFormat, &eventTime);
+//            ConvertStringTimeStamp(stringTimeStamp, eventTime);
+
+            inputEventsQueue.push(eventsMap[eventType](eventTime, eventType, extra));
 
 //            std::vector<std::string> tmp;
 //            tmp.push_back(timeStamp);
@@ -72,13 +85,14 @@ ParserFile::ParserFile(std::string& path) {
 //            q.push(tmp);
         }
         in.close();
-        args = q;
+//        args = q;
     } catch (std::exception &ex) {
         in.close();
         throw ParserFileError(ex.what());
     }
 }
 
-std::queue<std::vector<std::string>> ParserFile::GetEventsQueue() const {
-    return args;
+std::queue<BaseEvent*> ParserFile::GetInputEventsQueue() const {
+    // TODO: implement
+    return inputEventsQueue;
 }
