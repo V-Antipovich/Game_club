@@ -19,16 +19,9 @@ int main(int argc, char* argv[]) {
             auto ev = q.front();
             q.pop();
             ev->Act();
+            std::cout << ev->GetPrintString() << "\n";
             delete ev;
         }
-//        auto q = parser_file.GetEventsQueue();
-//        while (!q.empty()) {
-//            for (auto s: q.front()) {
-//                std::cout<<s<<" ";
-//            }
-//            q.pop();
-//            std::cout<<"\n";
-//        }
     } catch (const ParserConsoleException& pce) {
         std::cout<<"Чтобы программа корректно выполнилась, ей на вход необходимо предоставить один аргумент - путь до файла\n"
                    "Файл должен существовать и быть с расширением .txt";
@@ -37,7 +30,6 @@ int main(int argc, char* argv[]) {
     return 0;
 }
 // TODO: 1) Форматирование даты std::tm
-// TODO: 2) Все разные классы Событий
 // TODO: 3) Создать окружение событий: словари клиентов/столов/очередь
 // TODO: 4) Собственно реализовывать задачу
 // TODO: ) Тесты

@@ -17,4 +17,5 @@ add_executable(gamer_club
         Events/EventsFactory.cpp
         Events/ClientGoneEvent.cpp
         Events/ClientWaitingEvent.cpp
-        Events/ErrorEvent.cpp)
+        Events/ErrorEvent.cpp
+        TimeStamp.cpp)

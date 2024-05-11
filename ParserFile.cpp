@@ -1,7 +1,3 @@
-//
-// Created by vitalii on 5/9/24.
-//
-
 #include "ParserFile.h"
 /*
  Данный код бросает ошибку, если значения количества столов и цены за час оказались неположительными.
@@ -17,11 +13,6 @@ bool ParserFile::is_code_valid(int64_t code) {
     auto it = allowed_codes.find(code);
     return it != allowed_codes.end();
 }
-
-//void ParserFile::ConvertStringTimeStamp(std::string& stringTimeStamp, std::tm& timeStamp) {
-//    // TODO: валидировать время
-//    strptime(stringTimeStamp.c_str(), parseFormat, &timeStamp);
-//}
 
 ParserFile::ParserFile(std::string& path) {
     std::ifstream in;
@@ -43,25 +34,27 @@ ParserFile::ParserFile(std::string& path) {
         if (false) { // TODO: валидация и выплевываем если что
             throw ParserFileError();
         }
+        startWorkTime = TimeStamp(raw_start);
+
         in>>raw_end;
         if (false) { // TODO: валидация и выплевываем если что
             throw ParserFileError();
         }
+        endWorkTime = TimeStamp(raw_end);
+
         in>>costPerHour;
         if (false) { // TODO: валидация и выплевываем если что
             throw ParserFileError();
         }
-        strptime(raw_start.c_str(), parseFormat, &startWorkTime);
-        strptime(raw_end.c_str(), parseFormat, &endWorkTime);
 
         std::queue<std::vector<std::string>> q;
         std::unordered_map<std::string, std::string> extra;
-        std::tm eventTime = {};
-        // TODO: внедрить фабрику
+        TimeStamp eventTime;
         auto eventsMap = CreateEventsMap();
         while (in>>stringTimeStamp>>eventType>>clientName) {
             extra.clear();
-            eventTime = {};
+            // TODO: validate
+            eventTime = TimeStamp(stringTimeStamp);
             extra[nameKey] = clientName;
             // TODO: валидируем: надо cin.getline вообще
             // TODO: Стол номера не больше чем надо
@@ -70,22 +63,11 @@ ParserFile::ParserFile(std::string& path) {
                 in >> tableNum;
                 extra[tableNumKey] = std::to_string(tableNum);
             }
-            strptime(stringTimeStamp.c_str(), parseFormat, &eventTime);
-//            ConvertStringTimeStamp(stringTimeStamp, eventTime);
 
             inputEventsQueue.push(eventsMap[eventType](eventTime, eventType, extra));
 
-//            std::vector<std::string> tmp;
-//            tmp.push_back(timeStamp);
-//            tmp.push_back(std::to_string(eventType));
-//            tmp.push_back(clientName);
-
-//                tmp.push_back(std::to_string(tableNum));
-//            }
-//            q.push(tmp);
         }
         in.close();
-//        args = q;
     } catch (std::exception &ex) {
         in.close();
         throw ParserFileError(ex.what());
@@ -93,6 +75,5 @@ ParserFile::ParserFile(std::string& path) {
 }
 
 std::queue<BaseEvent*> ParserFile::GetInputEventsQueue() const {
-    // TODO: implement
     return inputEventsQueue;
 }
