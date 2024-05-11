@@ -7,5 +7,5 @@ class ClientGoneEvent : public NameRequiredEvent {
     public:
         ClientGoneEvent(TimeStamp &timeStamp, int64_t code, std::string &name);
 
-        void Act() override;
+        void Act(GamerClubEnv& env, std::queue<BaseEvent*>& outputQueue) override;
 };

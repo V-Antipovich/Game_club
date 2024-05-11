@@ -1,12 +1,11 @@
 #include <iostream>
-#include <fstream>
-#include <queue>
 #include "ParserConsole.h"
+//#include "ParserFile.h"
+#include "GamerClubEnv.h"
 #include "ParserFile.h"
-
 int main(int argc, char* argv[]) {
     try {
-        // TODO: ?std::tm заменить на более легковсный класс - нам нужны только минуты и часы
+        // TODO: ?std::tm заменить на более легковесный класс - нам нужны только минуты и часы
         // Парсим аргументы командной строки. Если формат неправильный или файла нет, мы выводим справку как надо вызывать
         ParserConsole parser_console = ParserConsole(argc, argv);
         auto path = parser_console.GetInputFile();
@@ -15,13 +14,15 @@ int main(int argc, char* argv[]) {
         // TODO: Создать окружение на основе объектов полученных от парсинга
         // TODO: вывод как просят в задаче
 
-        while (!parser_file.inputEventsQueue.empty()) {
-            auto ev = parser_file.inputEventsQueue.front();
-            parser_file.inputEventsQueue.pop();
-            ev->Act();
-            std::cout << ev->GetPrintString() << "\n";
-            delete ev;
-        }
+//        GamerClubEnv env(parser_file.tablesNum, parser_file.costPerHour, parser_file.startWorkTime,
+//                         parser_file.endWorkTime);
+//        while (!parser_file.inputEventsQueue.empty()) {
+//            auto ev = parser_file.inputEventsQueue.front();
+//            parser_file.inputEventsQueue.pop();
+//            ev->Act();
+//            std::cout << ev->GetPrintString() << "\n";
+//            delete ev;
+//        }
         // Всех, кто не ушел - выгоняем, подсчитываем, записываем, вносим в очередь на Print
 
         // Разбираем очередь всех событий которые просто на Print
@@ -34,4 +35,5 @@ int main(int argc, char* argv[]) {
 }
 // TODO: 3) Создать окружение событий: словари клиентов/столов/очередь
 // TODO: 4) Собственно реализовывать задачу
+// TODO: 5) Rule of three
 // TODO: после всего) Тесты

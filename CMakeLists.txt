@@ -20,4 +20,8 @@ add_executable(gamer_club
         Events/ErrorEvent.cpp
         TimeStamp.cpp
         TableInterval.cpp
-        Table.cpp)
+        Table.cpp
+        Client.cpp
+        ClientsBase.cpp
+        GamerClubEnv.cpp
+)

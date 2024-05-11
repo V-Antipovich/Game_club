@@ -8,5 +8,5 @@ protected:
 public:
     ErrorEvent(TimeStamp &timeStamp, int64_t code, std::string &error);
 
-    void Act() override;
+    void Act(GamerClubEnv& env, std::queue<BaseEvent*>& outputQueue) override;
 };

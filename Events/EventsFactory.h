@@ -3,7 +3,6 @@
 #include <unordered_map>
 #include <cstdint>
 #include <functional>
-#include "BaseEvent.h"
 #include "ClientCameEvent.h"
 #include "ClientSatEvent.h"
 #include "ClientWaitingEvent.h"
