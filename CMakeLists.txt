@@ -18,4 +18,6 @@ add_executable(gamer_club
         Events/ClientGoneEvent.cpp
         Events/ClientWaitingEvent.cpp
         Events/ErrorEvent.cpp
-        TimeStamp.cpp)
+        TimeStamp.cpp
+        TableInterval.cpp
+        Table.cpp)

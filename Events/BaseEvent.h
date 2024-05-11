@@ -14,6 +14,7 @@ class BaseEvent {
         BaseEvent(TimeStamp &timeStamp, int64_t code);
 
     public:
+        // TODO: аргумент - окружение
         virtual void Act() = 0;
 
         virtual ~BaseEvent() = default;

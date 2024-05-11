@@ -73,7 +73,3 @@ ParserFile::ParserFile(std::string& path) {
         throw ParserFileError(ex.what());
     }
 }
-
-std::queue<BaseEvent*> ParserFile::GetInputEventsQueue() const {
-    return inputEventsQueue;
-}

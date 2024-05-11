@@ -8,6 +8,10 @@ std::string TimeStamp::TwoDigitNumber(int64_t n) {
     return str_n;
 }
 
+int64_t TimeStamp::ConvertToMinutes() const {
+    return hours*60 + minutes;
+}
+
 TimeStamp &TimeStamp::operator=(const TimeStamp &other) {
     if (this == &other) {
         return *this;
@@ -33,4 +37,16 @@ TimeStamp::TimeStamp(std::string &rawTimeStamp) {
 std::string TimeStamp::PrintTime() const {
     std::string output = TwoDigitNumber(hours) + ":" + TwoDigitNumber(minutes);
     return output;
+}
+
+int64_t TimeStamp::operator-(const TimeStamp &other) const{
+    return this->ConvertToMinutes() - other.ConvertToMinutes();
+}
+
+bool TimeStamp::operator<(const TimeStamp &rhs) const {
+    return hours<rhs.hours || (hours == rhs.hours && minutes < rhs.minutes);
+}
+
+bool TimeStamp::operator>(const TimeStamp &rhs) const {
+    return hours>rhs.hours || (hours == rhs.hours && minutes > rhs.minutes);
 }

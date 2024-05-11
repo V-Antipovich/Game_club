@@ -12,16 +12,19 @@ int main(int argc, char* argv[]) {
         auto path = parser_console.GetInputFile();
         std::cout<<path<<"\n";
         ParserFile parser_file = ParserFile(path);
-        auto q = parser_file.GetInputEventsQueue();
         // TODO: Создать окружение на основе объектов полученных от парсинга
-        // TODO: вывод ка в задаче
-        while (!q.empty()) {
-            auto ev = q.front();
-            q.pop();
+        // TODO: вывод как просят в задаче
+
+        while (!parser_file.inputEventsQueue.empty()) {
+            auto ev = parser_file.inputEventsQueue.front();
+            parser_file.inputEventsQueue.pop();
             ev->Act();
             std::cout << ev->GetPrintString() << "\n";
             delete ev;
         }
+        // Всех, кто не ушел - выгоняем, подсчитываем, записываем, вносим в очередь на Print
+
+        // Разбираем очередь всех событий которые просто на Print
     } catch (const ParserConsoleException& pce) {
         std::cout<<"Чтобы программа корректно выполнилась, ей на вход необходимо предоставить один аргумент - путь до файла\n"
                    "Файл должен существовать и быть с расширением .txt";
@@ -29,7 +32,6 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-// TODO: 1) Форматирование даты std::tm
 // TODO: 3) Создать окружение событий: словари клиентов/столов/очередь
 // TODO: 4) Собственно реализовывать задачу
-// TODO: ) Тесты
+// TODO: после всего) Тесты

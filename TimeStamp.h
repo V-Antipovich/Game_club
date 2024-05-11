@@ -11,11 +11,10 @@ class TimeStamp {
 private:
     // Только для hour и minutes
     static std::string TwoDigitNumber(int64_t n);
-
 public:
     int64_t hours = 0;
     int64_t minutes = 0;
-
+    [[nodiscard]] int64_t ConvertToMinutes() const;
     TimeStamp &operator=(const TimeStamp &other);
 
     TimeStamp() = default;
@@ -27,4 +26,9 @@ public:
     explicit TimeStamp(std::string &rawTimeStamp);
 
     [[nodiscard]] std::string PrintTime() const;
+
+    int64_t operator-(const TimeStamp& other) const;
+    // TODO: spaceship
+    bool operator<(const TimeStamp& rhs) const;
+    bool operator>(const TimeStamp& rhs) const;
 };
