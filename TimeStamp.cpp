@@ -28,10 +28,15 @@ TimeStamp::TimeStamp(TimeStamp &other) {
 }
 
 TimeStamp::TimeStamp(std::string &rawTimeStamp) {
-    // TODO: валидируем и бросаем ошибку в случае чего
+    // Используем только если уверены в правильности формата
     hours = stoll(rawTimeStamp.substr(0, 2));
     minutes = stoll(rawTimeStamp.substr(3, 2));
 
+}
+
+TimeStamp::TimeStamp(std::string &&rawTimeStamp) {
+    hours = stoll(rawTimeStamp.substr(0, 2));
+    minutes = stoll(rawTimeStamp.substr(3, 2));
 }
 
 std::string TimeStamp::PrintTime() const {
@@ -45,8 +50,4 @@ int64_t TimeStamp::operator-(const TimeStamp &other) const{
 
 bool TimeStamp::operator<(const TimeStamp &rhs) const {
     return hours<rhs.hours || (hours == rhs.hours && minutes < rhs.minutes);
-}
-
-bool TimeStamp::operator>(const TimeStamp &rhs) const {
-    return hours>rhs.hours || (hours == rhs.hours && minutes > rhs.minutes);
 }

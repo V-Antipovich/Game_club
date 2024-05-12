@@ -1,20 +1,4 @@
 #include "ParserFile.h"
-/*
- Данный код бросает ошибку, если значения количества столов и цены за час оказались неположительными.
- Предполагается логичным, что с точки зрения ведения бизнеса не предполагается обоснованным содержание
- компьютерного клуба без столов или с тарифом <= 0 р/час
- */
-
-// TODO: мы выключили папку Events/ , всё подключить через простые Event
-bool ParserFile::is_time_valid(std::string &timestamp) {
-    return (timestamp.size() == 5 && timestamp[2] == ':' && isdigit(timestamp[0])
-    && isdigit(timestamp[1]) && isdigit(timestamp[3]) &&isdigit(timestamp[4]));
-}
-
-bool ParserFile::is_code_valid(int64_t code) {
-    auto it = allowed_codes.find(code);
-    return it != allowed_codes.end();
-}
 
 ParserFile::ParserFile(std::string& path) {
     std::ifstream in;
@@ -22,60 +6,64 @@ ParserFile::ParserFile(std::string& path) {
     try {
         int64_t eventType=0;
         int64_t tableNum=0;
-        std::string raw_start;
-        std::string raw_end;
+        std::string rawTableNum;
+        std::string rawStartEnd;
+        std::string rawTimeStamp;
+        std::string rawCostPerHour;
         std::string clientName;
         std::string stringTimeStamp;
-        in >> tablesNum; // TODO: ее сначала надо в виде строки
-        if (tablesNum <= 0) {
-            // TODO: многабукав в константы + тут надо выплевывать ошибку с завершением программы
-            throw ParserFileError("Значения количества столов и тарифа должны быть целыми положительными");
-        }
-
-        in>>raw_start;
-        if (false) { // TODO: валидация и выплевываем если что
-            throw ParserFileError();
-        }
-        startWorkTime = TimeStamp(raw_start);
-
-        in>>raw_end;
-        if (false) { // TODO: валидация и выплевываем если что
-            throw ParserFileError();
-        }
-        endWorkTime = TimeStamp(raw_end);
-
-        in>>costPerHour;
-        if (false) { // TODO: валидация и выплевываем если что
-            throw ParserFileError();
-        }
-
-//        std::queue<std::vector<std::string>> q;
-//        std::unordered_map<std::string, std::string> extra;
+        std::string rawEvent;
         TimeStamp eventTime;
-//        auto eventsMap = CreateEventsMap();
+        TimeStamp prevTime;
+
+        std::getline(in, rawTableNum);
+        if (!(in.good() && std::regex_match(rawTableNum.begin(), rawTableNum.end(), NumMatch))) {
+            throw ParserFileError(rawTableNum);
+        }
+        std::stringstream sst(rawTableNum);
+        sst >> tablesNum;
+
+        std::getline(in, rawStartEnd);
+        if (!(in.good() && std::regex_match(rawStartEnd.begin(), rawStartEnd.end(), startEndMatch))) {
+            throw ParserFileError(rawStartEnd);
+        }
+        startWorkTime = TimeStamp(rawStartEnd.substr(0, 5));
+        endWorkTime = TimeStamp(rawStartEnd.substr(6, 5));
+
+        std::getline(in, rawCostPerHour);
+        if (!(in.good() && std::regex_match(rawCostPerHour.begin(), rawCostPerHour.end(), NumMatch))) {
+            throw ParserFileError(rawCostPerHour);
+        }
+        costPerHour = stoll(rawCostPerHour);
+
         Event *event = nullptr;
-        while (in>>stringTimeStamp>>eventType>>clientName) {
-//            extra.clear();
-            // TODO: validate
-            eventTime = TimeStamp(stringTimeStamp);
-//            extra[nameKey] = clientName;
-            // TODO: валидируем: надо cin.getline вообще
-            // TODO: Стол номера не больше чем надо
-            // TODO: Последовательные события проверка
-            if (eventType==2) {
-                in >> tableNum;
-//                extra[tableNumKey] = std::to_string(tableNum);
+        bool first = true;
+        while (std::getline(in, rawEvent)) {
+            if (!((in.good() || in.eof()) && std::regex_match(rawEvent.begin(), rawEvent.end(), eventMatch))) {
+                throw ParserFileError(rawEvent);
+            }
+            std::stringstream ss(rawEvent);
+            ss >> rawTimeStamp >> eventType >> clientName;
+            eventTime = TimeStamp(rawTimeStamp);
+            if (!(first || !(eventTime < prevTime))) {
+                throw ParserFileError(rawEvent);
+            }
+            first = false;
+            prevTime = eventTime;
+            if (eventType == 2) {
+                ss >> tableNum;
+                if (tableNum > tablesNum) {
+                    throw ParserFileError(rawEvent);
+                }
                 event = new Event(eventTime, eventType, clientName, tableNum);
             } else {
                 event = new Event(eventTime, eventType, clientName);
             }
             inputEventsQueue.push(event);
-//            inputEventsQueue.push(eventsMap[eventType](eventTime, eventType, extra));
-
         }
+    } catch (ParserFileError &pfe) {
         in.close();
-    } catch (std::exception &ex) {
-        in.close();
-        throw ParserFileError(ex.what());
+        std::cout << pfe.what() << "\n";
+        exit(0);
     }
 }

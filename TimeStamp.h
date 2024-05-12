@@ -12,7 +12,9 @@ private:
 public:
     int64_t hours = 0;
     int64_t minutes = 0;
+
     [[nodiscard]] int64_t ConvertToMinutes() const;
+
     TimeStamp &operator=(const TimeStamp &other);
 
     TimeStamp() = default;
@@ -20,14 +22,18 @@ public:
     TimeStamp(int64_t h, int64_t m);
 
     TimeStamp(TimeStamp &other);
+
     TimeStamp(TimeStamp&&)=default;
+
     ~TimeStamp()=default;
+
     explicit TimeStamp(std::string &rawTimeStamp);
+
+    explicit TimeStamp(std::string &&rawTimeStamp);
 
     [[nodiscard]] std::string PrintTime() const;
 
     int64_t operator-(const TimeStamp& other) const;
-    // TODO: spaceship
+
     bool operator<(const TimeStamp& rhs) const;
-    bool operator>(const TimeStamp& rhs) const;
 };

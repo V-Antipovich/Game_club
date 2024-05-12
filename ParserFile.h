@@ -1,28 +1,26 @@
 #pragma once
-// TODO: выбросить то что уже было подключено
-#include <string>
-#include <cstdint>
-#include <fstream>
-#include "ParserFileError.h"
-#include <sstream>
-#include <iomanip>
-#include <map>
-#include <queue>
-#include <vector>
-#include <unordered_set>
-#include <unordered_map>
-#include "Event.h"
-//#include "Events/EventsFactory.h"
 
-// Будет парсить файл и хранить в себе структуры всего игрового клуба
+#include <iomanip>
+#include <iostream>
+#include <fstream>
+#include <map>
+#include <regex>
+#include <sstream>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+#include <queue>
+#include "Event.h"
+#include "ParserFileError.h"
+
 class ParserFile {
     private:
+        const std::regex NumMatch = std::regex("[1-9][0-9]*");
+        const std::regex startEndMatch = std::regex("[0-9]{2}:[0-9]{2} [0-9]{2}:[0-9]{2}");
+        const std::regex eventMatch = std::regex(R"([0-9]{2}:[0-9]{2} [1-4] [a-z0-9\_\-]+[ [1-9]\d*]?)");
         const std::string nameKey = "name";
         const std::string tableNumKey = "tableNum";
         const std::unordered_set<int64_t> allowed_codes{1, 2, 3, 4};
-        static bool is_time_valid(std::string &timestamp);
-
-        bool is_code_valid(int64_t code);
 
     public:
         explicit ParserFile(std::string& path);
