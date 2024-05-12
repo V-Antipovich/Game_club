@@ -13,16 +13,24 @@ int main(int argc, char* argv[]) {
         ParserFile parser_file = ParserFile(path);
         // TODO: Создать окружение на основе объектов полученных от парсинга
         // TODO: вывод как просят в задаче
+        std::queue<BaseEvent*> inputQueue = parser_file.inputEventsQueue;
+        std::queue<BaseEvent*> outputQueue;
+        GamerClubEnv env(parser_file.tablesNum, parser_file.costPerHour, parser_file.startWorkTime, parser_file.endWorkTime);
+        while (!inputQueue.empty()) {
+            BaseEvent *event = inputQueue.front();
+            inputQueue.pop();
+            outputQueue.push(event);
+            event->Act(env, outputQueue);
+            delete event;
+        }
 
-//        GamerClubEnv env(parser_file.tablesNum, parser_file.costPerHour, parser_file.startWorkTime,
-//                         parser_file.endWorkTime);
-//        while (!parser_file.inputEventsQueue.empty()) {
-//            auto ev = parser_file.inputEventsQueue.front();
-//            parser_file.inputEventsQueue.pop();
-//            ev->Act();
-//            std::cout << ev->GetPrintString() << "\n";
-//            delete ev;
-//        }
+        while (!outputQueue.empty()) {
+            BaseEvent *event = outputQueue.front();
+            outputQueue.pop();
+            std::cout<<event->GetPrintString()<<"\n";
+//            delete event;
+        }
+
         // Всех, кто не ушел - выгоняем, подсчитываем, записываем, вносим в очередь на Print
 
         // Разбираем очередь всех событий которые просто на Print

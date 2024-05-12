@@ -10,3 +10,5 @@ public:
 
     void Act(GamerClubEnv& env, std::queue<BaseEvent*>& outputQueue) override;
 };
+
+BaseEvent *CreateErrorEvent(TimeStamp &timeStamp, int64_t code, std::unordered_map<std::string, std::string> &extra);

@@ -11,6 +11,9 @@
 
 class BaseEvent {
     protected:
+        const int64_t cameCode = 1;
+        const int64_t errorCode = 13;
+
         std::string specialPart;
         int64_t code = 0;
         TimeStamp timeStamp;

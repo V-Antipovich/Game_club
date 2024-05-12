@@ -30,5 +30,10 @@ GamerClubEnv::GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &st
         : numTables(numTables), costPerHour(costPerHour), startWorkTime(startWorkTime), endWorkTime(endWorkTime) {
     for (int64_t i = 1; i <= numTables; ++i) {
         tables[i];
+        free_tables.insert(i);
     }
+}
+
+bool GamerClubEnv::IsClosed(TimeStamp& tm) {
+    return tm < startWorkTime || tm > endWorkTime;
 }

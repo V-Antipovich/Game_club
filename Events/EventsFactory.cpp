@@ -20,9 +20,6 @@ CreateClientGoneEvent(TimeStamp &timeStamp, int64_t code, std::unordered_map<std
     return new ClientGoneEvent(timeStamp, code, extra["name"]);
 }
 
-BaseEvent *CreateErrorEvent(TimeStamp &timeStamp, int64_t code, std::unordered_map<std::string, std::string> &extra) {
-    return new ErrorEvent(timeStamp, code, extra["errorName"]);
-}
 
 std::unordered_map<int64_t, std::function<BaseEvent *(TimeStamp &, int64_t,
                                                       std::unordered_map<std::string, std::string> &)>>
