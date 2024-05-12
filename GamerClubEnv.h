@@ -35,7 +35,7 @@ class GamerClubEnv: public ClientsBase {
     void ClientSatAction(Event* event);
     void ClientWaitingAction(Event* event);
     void ClientGoneAction(Event* event);
-    void ErrorAction(Event* event);
+//    void ErrorAction(Event* event);
 
     std::unordered_map<int64_t, MemberFunPointer> actionsMap;
 

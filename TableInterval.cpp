@@ -12,6 +12,7 @@ TableInterval::TableInterval(int64_t clientID, TimeStamp &startTime): clientID(c
 
 void TableInterval::CloseInterval(TimeStamp &endTime, int64_t pricing) {
     finish = endTime;
+    clientID = -1;
     is_interval_closed = true;
     minutesSpent = finish-start;
     CountIncome(pricing);

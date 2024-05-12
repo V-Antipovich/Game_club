@@ -18,6 +18,7 @@ void Table::UpdateTotal(int64_t pricing) {
 }
 
 void Table::StartSession(int64_t clientID, TimeStamp &timeStamp) {
+    is_empty = false;
     IDCurrentClient = clientID;
 //    TableInterval newInterval(clientID, timeStamp);
     intervals.emplace_back(clientID, timeStamp);
