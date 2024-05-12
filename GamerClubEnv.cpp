@@ -37,10 +37,11 @@ void GamerClubEnv::ClientCameAction(Event *event) {
     }
     waitingGuests.push_back(id);
     ClientWaits(id, waitingGuests.size());
+
+    // TODO: если очередь ожидания заполнена, он уходит.
 }
 
 void GamerClubEnv::ClientSatAction(Event *event) {
-    // TODO: implement normally
     int64_t id = AddIfNew(event->clientName);
     if (!IsPresent(id)) {
         auto *err = new Event(event->timeStamp, ErrorActionCode, ClientUnknownError, true);
@@ -49,6 +50,7 @@ void GamerClubEnv::ClientSatAction(Event *event) {
     }
 
     int64_t newTableNum = event->tableNum;
+    // Если стол занят
     if (!tables[newTableNum].is_empty) {
         auto *err = new Event(event->timeStamp, ErrorActionCode, PlaceIsBusyError, true);
         outputQueue.push(err);
@@ -58,18 +60,30 @@ void GamerClubEnv::ClientSatAction(Event *event) {
     int64_t oldTableNum = GetTableNumber(id);
     if (oldTableNum > 0) {
         tables[oldTableNum].CloseSession(event->timeStamp, costPerHour);
+        free_tables.insert(oldTableNum);
     } else {
         // Если чел не за столом, тогда он в очереди - удалим его оттуда
         RemoveFromQueue(id);
     }
     // Открываем новый
     tables[newTableNum].StartSession(id, event->timeStamp);
+    free_tables.erase(newTableNum);
     ClientSits(id, newTableNum);
 }
 
 void GamerClubEnv::ClientWaitingAction(Event *event) {
-    // TODO: implement normally
-    std::cout<<"ClientWaitingAction playing\n";
+    // В клубе есть свободные столы
+    int64_t id = AddIfNew(event->clientName);
+    if (!free_tables.empty()) {
+        auto *err = new Event(event->timeStamp, ErrorActionCode, ICanWaitNoLongerError, true);
+        outputQueue.push(err);
+        return;
+    }
+    if (numTables < waitingGuests.size()) {
+        RemoveFromQueue(id);
+        auto *leave = new Event(event->timeStamp, OutputClientGoneActionCode, event->clientName, false);
+        outputQueue.push(leave);
+    }
 }
 
 void GamerClubEnv::ClientGoneAction(Event *event) {
@@ -122,4 +136,5 @@ void GamerClubEnv::Print() {
 
 void GamerClubEnv::RemoveFromQueue(int64_t clientId) {
     waitingGuests.erase(std::remove(waitingGuests.begin(), waitingGuests.end(), clientId), waitingGuests.end());
+    ClientLeaves(clientId);
 }

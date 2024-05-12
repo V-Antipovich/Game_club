@@ -10,7 +10,7 @@ public:
     std::string name;
     bool is_present = false;
     int64_t currentTableNum = -1;
-    size_t currentQueuePlace = 0;
+    int64_t currentQueuePlace = -1;
 
     Client() = default;
 

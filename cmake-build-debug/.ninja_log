@@ -56,3 +56,10 @@
 0	675	1715517962099411129	CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o	b776066c3d394d3d
 0	678	1715517962103077772	CMakeFiles/gamer_club.dir/main.cpp.o	5f24c28f5bf675f8
 678	729	1715517962153494113	gamer_club	68c4d8826f15a778
+1	263	1715529727853962437	CMakeFiles/gamer_club.dir/Client.cpp.o	2ac413bbac4c5fd8
+1	486	1715529728076711013	CMakeFiles/gamer_club.dir/ClientsBase.cpp.o	b5211eff97f2ac5f
+1	906	1715529728496541663	CMakeFiles/gamer_club.dir/main.cpp.o	5f24c28f5bf675f8
+1	947	1715529728536874738	CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o	b776066c3d394d3d
+947	1040	1715529728629457480	gamer_club	68c4d8826f15a778
+0	943	1715529823548758329	CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o	b776066c3d394d3d
+943	1039	1715529823645007694	gamer_club	68c4d8826f15a778
