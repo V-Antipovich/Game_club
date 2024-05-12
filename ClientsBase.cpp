@@ -40,3 +40,8 @@ void ClientsBase::ClientSits(int64_t id, int64_t tableId) {
     base[id].currentQueuePlace = -1;
     base[id].currentTableNum = tableId;
 }
+
+void ClientsBase::ClientWaits(int64_t id, size_t pos) {
+    base[id].is_present = true;
+    base[id].currentQueuePlace = pos;
+}

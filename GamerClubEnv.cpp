@@ -36,6 +36,7 @@ void GamerClubEnv::ClientCameAction(Event *event) {
         return;
     }
     waitingGuests.push_back(id);
+    ClientWaits(id, waitingGuests.size());
 }
 
 void GamerClubEnv::ClientSatAction(Event *event) {

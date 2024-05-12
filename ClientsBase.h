@@ -18,6 +18,7 @@ class ClientsBase {
         bool IsSitting(int64_t id);
         bool IsWaiting(int64_t id);
         void ClientSits(int64_t id, int64_t tableId);
+        void ClientWaits(int64_t id, size_t pos);
         int64_t GetTableNumber(int64_t ID);
         ClientsBase()=default;
 };
