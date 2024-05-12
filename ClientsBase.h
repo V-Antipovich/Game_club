@@ -14,7 +14,6 @@ class ClientsBase {
         int64_t AddIfNew(std::string &name);
         std::string GetName(int64_t ID);
 //        int64_t GetID(std::string &name);
-//        bool IsPresent(std::string &name);
         bool IsPresent(int64_t id);
         ClientsBase()=default;
 };

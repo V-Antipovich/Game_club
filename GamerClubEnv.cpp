@@ -18,40 +18,42 @@ TimeStamp GamerClubEnv::GetEndWorkTime() {
     return endWorkTime;
 }
 
-//void GamerClubEnv::HandleInputEvents() {
-//    while (!inputEventsQueue.empty()) {
-//        auto inputEvent = inputEventsQueue.front();
-//        inputEventsQueue.pop();
-//        outputEventsQueue.push(inputEvent);
-//        inputEvent->Act(this);
-//    }
-//}
-
 bool GamerClubEnv::IsClosed(TimeStamp& tm) {
     return tm < startWorkTime || tm > endWorkTime;
 }
 
-void GamerClubEnv::ClientCameAction(Event *) {
-    // TODO: implement normally
-    std::cout<<"ClientCameAction playing\n";
+void GamerClubEnv::ClientCameAction(Event *event) {
+    int64_t id = AddIfNew(event->clientName);
+
+    if (IsPresent(id)) {
+        auto *err = new Event(event->timeStamp, ErrorActionCode, YouShallNotPassError, true);
+        outputQueue.push(err);
+        return;
+    }
+    if (IsClosed(event->timeStamp)) {
+        auto *err = new Event(event->timeStamp, ErrorActionCode, NotOpenYetError, true);
+        outputQueue.push(err);
+        return;
+    }
+    waitingGuests.push_back(id);
 }
 
-void GamerClubEnv::ClientSatAction(Event *) {
+void GamerClubEnv::ClientSatAction(Event *event) {
     // TODO: implement normally
     std::cout<<"ClietnSatAction playing\n";
 }
 
-void GamerClubEnv::ClientWaitingAction(Event *) {
+void GamerClubEnv::ClientWaitingAction(Event *event) {
     // TODO: implement normally
     std::cout<<"ClientWaitingAction playing\n";
 }
 
-void GamerClubEnv::ClientGoneAction(Event *) {
+void GamerClubEnv::ClientGoneAction(Event *event) {
     // TODO: implement normally
     std::cout<<"ClientGoneAction playing\n";
 }
 
-void GamerClubEnv::ErrorAction(Event*) {
+void GamerClubEnv::ErrorAction(Event*event) {
     // TODO: implement normally
     std::cout<<"ErrorAction playing\n";
 }
@@ -67,9 +69,6 @@ GamerClubEnv::GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &st
     actionsMap.insert(std::make_pair(ClientWaitingActionCode, &GamerClubEnv::ClientWaitingAction));
     actionsMap.insert(std::make_pair(ClientGoneActionCode, &GamerClubEnv::ClientGoneAction));
     actionsMap.insert(std::make_pair(ErrorActionCode, &GamerClubEnv::ErrorAction));
-
-//    actionsMap[ClientCameActionCode] = ;
-//    actionsMap.insert(std::make_pair(ClientCameActionCode, ClientCameAction));
 }
 
 void GamerClubEnv::HandleInputEvents() {
@@ -95,4 +94,3 @@ void GamerClubEnv::Print() {
     std::cout<<endWorkTime.PrintTime()<<"\n";
     // TODO: cout выручка
 }
-
