@@ -22,3 +22,21 @@ std::string ClientsBase::GetName(int64_t ID) {
 bool ClientsBase::IsPresent(int64_t id) {
     return base[id].is_present;
 }
+
+bool ClientsBase::IsSitting(int64_t id) {
+    return base[id].currentTableNum > 0;
+}
+
+bool ClientsBase::IsWaiting(int64_t id) {
+    return base[id].currentQueuePlace > 0;
+}
+
+int64_t ClientsBase::GetTableNumber(int64_t ID) {
+    return base[ID].currentTableNum;
+}
+
+void ClientsBase::ClientSits(int64_t id, int64_t tableId) {
+    base[id].is_present = true;
+    base[id].currentQueuePlace = -1;
+    base[id].currentTableNum = tableId;
+}

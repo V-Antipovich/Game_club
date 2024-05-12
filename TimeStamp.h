@@ -20,7 +20,8 @@ public:
     TimeStamp(int64_t h, int64_t m);
 
     TimeStamp(TimeStamp &other);
-
+    TimeStamp(TimeStamp&&)=default;
+    ~TimeStamp()=default;
     explicit TimeStamp(std::string &rawTimeStamp);
 
     [[nodiscard]] std::string PrintTime() const;

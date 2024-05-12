@@ -17,3 +17,6 @@ void TableInterval::CloseInterval(TimeStamp &endTime, int64_t pricing) {
     CountIncome(pricing);
 }
 
+//TableInterval::TableInterval(TableInterval &&ti) noexcept : clientID(ti.clientID), income(ti.income), minutesSpent(ti.minutesSpent), start(std::move(ti.start)), finish(std::move(ti.finish)) , is_interval_closed(ti.is_interval_closed) {
+//}
+

@@ -40,7 +40,30 @@ void GamerClubEnv::ClientCameAction(Event *event) {
 
 void GamerClubEnv::ClientSatAction(Event *event) {
     // TODO: implement normally
-    std::cout<<"ClietnSatAction playing\n";
+    int64_t id = AddIfNew(event->clientName);
+    if (!IsPresent(id)) {
+        auto *err = new Event(event->timeStamp, ErrorActionCode, ClientUnknownError, true);
+        outputQueue.push(err);
+        return;
+    }
+
+    int64_t newTableNum = event->tableNum;
+    if (!tables[newTableNum].is_empty) {
+        auto *err = new Event(event->timeStamp, ErrorActionCode, PlaceIsBusyError, true);
+        outputQueue.push(err);
+        return;
+    }
+    // Закрываем текущий столик, если есть
+    int64_t oldTableNum = GetTableNumber(id);
+    if (oldTableNum > 0) {
+        tables[oldTableNum].CloseSession(event->timeStamp, costPerHour);
+    } else {
+        // Если чел не за столом, тогда он в очереди - удалим его оттуда
+        RemoveFromQueue(id);
+    }
+    // Открываем новый
+    tables[newTableNum].StartSession(id, event->timeStamp);
+    ClientSits(id, newTableNum);
 }
 
 void GamerClubEnv::ClientWaitingAction(Event *event) {
@@ -93,4 +116,9 @@ void GamerClubEnv::Print() {
     }
     std::cout<<endWorkTime.PrintTime()<<"\n";
     // TODO: cout выручка
+    std::cout<<"ВЫРУЧКА\n";
+}
+
+void GamerClubEnv::RemoveFromQueue(int64_t clientId) {
+    waitingGuests.erase(std::remove(waitingGuests.begin(), waitingGuests.end(), clientId), waitingGuests.end());
 }

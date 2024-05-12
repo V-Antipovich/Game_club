@@ -17,3 +17,19 @@ void Table::UpdateTotal(int64_t pricing) {
     UpdateTotalIncome(pricing);
 }
 
+void Table::StartSession(int64_t clientID, TimeStamp &timeStamp) {
+    IDCurrentClient = clientID;
+//    TableInterval newInterval(clientID, timeStamp);
+    intervals.emplace_back(clientID, timeStamp);
+//    intervals.emplace_back(newInterval);
+}
+
+void Table::CloseSession(TimeStamp &timeStamp, int64_t pricing) {
+    intervals.back().CloseInterval(timeStamp, pricing);
+    totalMinutesBusy += intervals.back().minutesSpent;
+}
+
+//void Table::CloseSession(int64_t clientId, TimeStamp &timeStamp) {
+//    intervals.back().CloseInterval(timeStamp);
+//}
+

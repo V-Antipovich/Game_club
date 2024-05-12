@@ -15,5 +15,9 @@ class ClientsBase {
         std::string GetName(int64_t ID);
 //        int64_t GetID(std::string &name);
         bool IsPresent(int64_t id);
+        bool IsSitting(int64_t id);
+        bool IsWaiting(int64_t id);
+        void ClientSits(int64_t id, int64_t tableId);
+        int64_t GetTableNumber(int64_t ID);
         ClientsBase()=default;
 };

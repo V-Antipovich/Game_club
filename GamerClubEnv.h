@@ -8,6 +8,7 @@
 #include "Event.h"
 #include <iostream>
 #include <functional>
+#include <algorithm>
 class GamerClubEnv: public ClientsBase {
     typedef void (GamerClubEnv::*MemberFunPointer)(Event*);
     const int64_t ClientCameActionCode=1;
@@ -22,6 +23,7 @@ class GamerClubEnv: public ClientsBase {
     std::string PlaceIsBusyError = "PlaceIsBusy";
     std::string ClientUnknownError = "ClientUnknown";
     std::string ICanWaitNoLongerError = "ICanWaitNoLonger";
+
     int64_t numTables = 0;
     int64_t costPerHour = 0;
     TimeStamp startWorkTime;
@@ -38,11 +40,14 @@ class GamerClubEnv: public ClientsBase {
     std::unordered_map<int64_t, MemberFunPointer> actionsMap;
 
     bool IsClosed(TimeStamp& tm);
-public:
-    std::deque<int64_t> waitingGuests;
+    std::vector<int64_t> waitingGuests;
     std::map<int64_t, Table> tables;
     std::set<int64_t> free_tables;
 
+    void RemoveFromQueue(int64_t clientId);
+//    void CloseSession(int64_t tableId, TimeStamp& timeStamp);
+
+public:
     [[nodiscard]] int64_t GetNumTables() const;
 
     [[nodiscard]] int64_t GetCostPerHour() const;

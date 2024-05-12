@@ -2,7 +2,6 @@
 #include "TimeStamp.h"
 class TableInterval {
     private:
-//        void CountTime();
         void CountIncome(int64_t pricing);
     public:
         bool is_interval_closed= false;
@@ -13,6 +12,6 @@ class TableInterval {
         TimeStamp finish;
 
         TableInterval(int64_t clientID, TimeStamp& startTime);
-
+//        TableInterval(TableInterval&& ti) noexcept ;
         void CloseInterval(TimeStamp& endTime, int64_t pricing);
 };
