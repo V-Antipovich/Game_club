@@ -4,6 +4,7 @@ ClientSatEvent::ClientSatEvent(TimeStamp &timeStamp, int64_t code, std::string &
         : NameTableRequiredEvent(timeStamp, code, name, tableNum) {}
 
 void ClientSatEvent::Act(GamerClubEnv& env, std::queue<BaseEvent*>& outputQueue) {
+
     // TODO: implement
-    std::cout<<"ClientSatEvent playing\n";
+//    std::cout<<"ClientSatEvent playing\n";
 }

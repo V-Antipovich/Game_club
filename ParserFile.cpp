@@ -4,6 +4,8 @@
  Предполагается логичным, что с точки зрения ведения бизнеса не предполагается обоснованным содержание
  компьютерного клуба без столов или с тарифом <= 0 р/час
  */
+
+// TODO: мы выключили папку Events/ , всё подключить через простые Event
 bool ParserFile::is_time_valid(std::string &timestamp) {
     return (timestamp.size() == 5 && timestamp[2] == ':' && isdigit(timestamp[0])
     && isdigit(timestamp[1]) && isdigit(timestamp[3]) &&isdigit(timestamp[4]));
@@ -47,24 +49,28 @@ ParserFile::ParserFile(std::string& path) {
             throw ParserFileError();
         }
 
-        std::queue<std::vector<std::string>> q;
-        std::unordered_map<std::string, std::string> extra;
+//        std::queue<std::vector<std::string>> q;
+//        std::unordered_map<std::string, std::string> extra;
         TimeStamp eventTime;
-        auto eventsMap = CreateEventsMap();
+//        auto eventsMap = CreateEventsMap();
+        Event *event = nullptr;
         while (in>>stringTimeStamp>>eventType>>clientName) {
-            extra.clear();
+//            extra.clear();
             // TODO: validate
             eventTime = TimeStamp(stringTimeStamp);
-            extra[nameKey] = clientName;
+//            extra[nameKey] = clientName;
             // TODO: валидируем: надо cin.getline вообще
             // TODO: Стол номера не больше чем надо
             // TODO: Последовательные события проверка
             if (eventType==2) {
                 in >> tableNum;
-                extra[tableNumKey] = std::to_string(tableNum);
+//                extra[tableNumKey] = std::to_string(tableNum);
+                event = new Event(eventTime, eventType, clientName, tableNum);
+            } else {
+                event = new Event(eventTime, eventType, clientName);
             }
-
-            inputEventsQueue.push(eventsMap[eventType](eventTime, eventType, extra));
+            inputEventsQueue.push(event);
+//            inputEventsQueue.push(eventsMap[eventType](eventTime, eventType, extra));
 
         }
         in.close();

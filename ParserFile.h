@@ -10,7 +10,9 @@
 #include <queue>
 #include <vector>
 #include <unordered_set>
-#include "Events/EventsFactory.h"
+#include <unordered_map>
+#include "Event.h"
+//#include "Events/EventsFactory.h"
 
 // Будет парсить файл и хранить в себе структуры всего игрового клуба
 class ParserFile {
@@ -24,7 +26,7 @@ class ParserFile {
 
     public:
         explicit ParserFile(std::string& path);
-        std::queue<BaseEvent*> inputEventsQueue;
+        std::queue<Event*> inputEventsQueue;
         int64_t tablesNum=0;
         int64_t costPerHour=0;
         TimeStamp startWorkTime;

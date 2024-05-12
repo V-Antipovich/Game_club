@@ -79,60 +79,6 @@ build CMakeFiles/gamer_club.dir/ParserFileError.cpp.o: CXX_COMPILER__gamer_club_
   OBJECT_DIR = CMakeFiles/gamer_club.dir
   OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir
 
-build CMakeFiles/gamer_club.dir/Events/BaseEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/BaseEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/BaseEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/ClientCameEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/ClientCameEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/ClientCameEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/ClientSatEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/ClientSatEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/ClientSatEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/NameTableRequiredEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/NameTableRequiredEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/NameTableRequiredEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/NameRequiredEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/NameRequiredEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/NameRequiredEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/EventsFactory.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/EventsFactory.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/EventsFactory.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/ClientGoneEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/ClientGoneEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/ClientGoneEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/ClientWaitingEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/ClientWaitingEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/ClientWaitingEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
-build CMakeFiles/gamer_club.dir/Events/ErrorEvent.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Events/ErrorEvent.cpp || cmake_object_order_depends_target_gamer_club
-  DEP_FILE = CMakeFiles/gamer_club.dir/Events/ErrorEvent.cpp.o.d
-  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/gamer_club.dir
-  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir/Events
-
 build CMakeFiles/gamer_club.dir/TimeStamp.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/TimeStamp.cpp || cmake_object_order_depends_target_gamer_club
   DEP_FILE = CMakeFiles/gamer_club.dir/TimeStamp.cpp.o.d
   FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
@@ -169,6 +115,12 @@ build CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o: CXX_COMPILER__gamer_club_uns
   OBJECT_DIR = CMakeFiles/gamer_club.dir
   OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir
 
+build CMakeFiles/gamer_club.dir/Event.cpp.o: CXX_COMPILER__gamer_club_unscanned_Debug /home/vitalii/Documents/Programming/cpp/game_club_yadro/Event.cpp || cmake_object_order_depends_target_gamer_club
+  DEP_FILE = CMakeFiles/gamer_club.dir/Event.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/gamer_club.dir
+  OBJECT_FILE_DIR = CMakeFiles/gamer_club.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target gamer_club
@@ -177,7 +129,7 @@ build CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o: CXX_COMPILER__gamer_club_uns
 #############################################
 # Link the executable gamer_club
 
-build gamer_club: CXX_EXECUTABLE_LINKER__gamer_club_Debug CMakeFiles/gamer_club.dir/main.cpp.o CMakeFiles/gamer_club.dir/ParserConsole.cpp.o CMakeFiles/gamer_club.dir/ParserConsoleException.cpp.o CMakeFiles/gamer_club.dir/ParserFile.cpp.o CMakeFiles/gamer_club.dir/ParserFileError.cpp.o CMakeFiles/gamer_club.dir/Events/BaseEvent.cpp.o CMakeFiles/gamer_club.dir/Events/ClientCameEvent.cpp.o CMakeFiles/gamer_club.dir/Events/ClientSatEvent.cpp.o CMakeFiles/gamer_club.dir/Events/NameTableRequiredEvent.cpp.o CMakeFiles/gamer_club.dir/Events/NameRequiredEvent.cpp.o CMakeFiles/gamer_club.dir/Events/EventsFactory.cpp.o CMakeFiles/gamer_club.dir/Events/ClientGoneEvent.cpp.o CMakeFiles/gamer_club.dir/Events/ClientWaitingEvent.cpp.o CMakeFiles/gamer_club.dir/Events/ErrorEvent.cpp.o CMakeFiles/gamer_club.dir/TimeStamp.cpp.o CMakeFiles/gamer_club.dir/TableInterval.cpp.o CMakeFiles/gamer_club.dir/Table.cpp.o CMakeFiles/gamer_club.dir/Client.cpp.o CMakeFiles/gamer_club.dir/ClientsBase.cpp.o CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o
+build gamer_club: CXX_EXECUTABLE_LINKER__gamer_club_Debug CMakeFiles/gamer_club.dir/main.cpp.o CMakeFiles/gamer_club.dir/ParserConsole.cpp.o CMakeFiles/gamer_club.dir/ParserConsoleException.cpp.o CMakeFiles/gamer_club.dir/ParserFile.cpp.o CMakeFiles/gamer_club.dir/ParserFileError.cpp.o CMakeFiles/gamer_club.dir/TimeStamp.cpp.o CMakeFiles/gamer_club.dir/TableInterval.cpp.o CMakeFiles/gamer_club.dir/Table.cpp.o CMakeFiles/gamer_club.dir/Client.cpp.o CMakeFiles/gamer_club.dir/ClientsBase.cpp.o CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o CMakeFiles/gamer_club.dir/Event.cpp.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/gamer_club.dir
   POST_BUILD = :
