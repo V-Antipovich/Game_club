@@ -1,23 +1,5 @@
 #include "GamerClubEnv.h"
 
-
-
-int64_t GamerClubEnv::GetNumTables() const {
-    return numTables;
-}
-
-int64_t GamerClubEnv::GetCostPerHour() const {
-    return costPerHour;
-}
-
-TimeStamp GamerClubEnv::GetStartWorkTime() {
-    return startWorkTime;
-}
-
-TimeStamp GamerClubEnv::GetEndWorkTime() {
-    return endWorkTime;
-}
-
 bool GamerClubEnv::IsClosed(TimeStamp& tm) {
     return tm < startWorkTime || tm > endWorkTime;
 }
@@ -109,8 +91,10 @@ void GamerClubEnv::ClientGoneAction(Event *event) {
             int64_t newID = waitingGuests[0];
             std::string newName = GetName(newID);
             RemoveFromQueue(newID);
+            ClientSits(newID, tableNum);
             auto *sits = new Event(event->timeStamp, OutputClientSatActionCode, newName, tableNum);
             outputQueue.push(sits);
+            tables[tableNum].StartSession(newID, event->timeStamp);
         }
     }
 }
@@ -125,7 +109,6 @@ GamerClubEnv::GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &st
     actionsMap.insert(std::make_pair(ClientSatActionCode, &GamerClubEnv::ClientSatAction));
     actionsMap.insert(std::make_pair(ClientWaitingActionCode, &GamerClubEnv::ClientWaitingAction));
     actionsMap.insert(std::make_pair(ClientGoneActionCode, &GamerClubEnv::ClientGoneAction));
-//    actionsMap.insert(std::make_pair(ErrorActionCode, &GamerClubEnv::ErrorAction));
 }
 
 void GamerClubEnv::HandleInputEvents() {
@@ -137,7 +120,20 @@ void GamerClubEnv::HandleInputEvents() {
         MemberFunPointer mfp = actionsMap[event->ID];
         (this->*mfp)(event);
     }
-    // TODO: конец дня всех выгнать и оставшиеся события напихать в очередь
+    std::set<std::pair<std::string, int64_t>> remainingGuests;
+    for (int64_t i = 1; i <= numTables; ++i) {
+        if (!tables[i].is_empty) {
+            remainingGuests.insert(std::make_pair(GetName(tables[i].IDCurrentClient), i));
+        }
+    }
+    for (auto &guest: remainingGuests) {
+        std::string name = guest.first;
+        int64_t tableId = guest.second;
+        auto *leave = new Event(endWorkTime, OutputClientGoneActionCode, name, false);
+        outputQueue.push(leave);
+        tables[tableId].CloseSession(endWorkTime, costPerHour);
+        ClientLeaves(AddIfNew(name));
+    }
 }
 
 void GamerClubEnv::Print() {
@@ -149,11 +145,12 @@ void GamerClubEnv::Print() {
         std::cout<<event->to_str()<<"\n";
     }
     std::cout<<endWorkTime.PrintTime()<<"\n";
-    // TODO: cout выручка
-    std::cout<<"ВЫРУЧКА\n";
+    for (int64_t t = 1; t <= numTables; ++t) {
+        tables[t].UpdateTimeBusy();
+        std::cout << t << " " << tables[t].totalIncome << " " << tables[t].totalBusy.PrintTime() << "\n";
+    }
 }
 
 void GamerClubEnv::RemoveFromQueue(int64_t clientId) {
     waitingGuests.erase(std::remove(waitingGuests.begin(), waitingGuests.end(), clientId), waitingGuests.end());
-
 }

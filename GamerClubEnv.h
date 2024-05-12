@@ -3,6 +3,7 @@
 #include <deque>
 #include <queue>
 #include <set>
+//#include <unordered_set>
 #include "ClientsBase.h"
 #include "Table.h"
 #include "Event.h"
@@ -15,7 +16,7 @@ class GamerClubEnv: public ClientsBase {
     const int64_t ClientSatActionCode=2;
     const int64_t ClientWaitingActionCode=3;
     const int64_t ClientGoneActionCode=4;
-    const int64_t OutputClientGoneActionCode=11;
+    int64_t OutputClientGoneActionCode = 11;
     const int64_t OutputClientSatActionCode=12;
     const int64_t ErrorActionCode=13;
     std::string YouShallNotPassError = "YouShallNotPass";
@@ -35,7 +36,6 @@ class GamerClubEnv: public ClientsBase {
     void ClientSatAction(Event* event);
     void ClientWaitingAction(Event* event);
     void ClientGoneAction(Event* event);
-//    void ErrorAction(Event* event);
 
     std::unordered_map<int64_t, MemberFunPointer> actionsMap;
 
@@ -45,17 +45,8 @@ class GamerClubEnv: public ClientsBase {
     std::set<int64_t> free_tables;
 
     void RemoveFromQueue(int64_t clientId);
-//    void CloseSession(int64_t tableId, TimeStamp& timeStamp);
 
 public:
-    [[nodiscard]] int64_t GetNumTables() const;
-
-    [[nodiscard]] int64_t GetCostPerHour() const;
-
-    TimeStamp GetStartWorkTime();
-
-    TimeStamp GetEndWorkTime();
-
     GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &startWorkTime, TimeStamp &endWorkTime, std::queue<Event*>& inputQueue);
 
     void HandleInputEvents();

@@ -5,9 +5,8 @@
 
 class Table {
     private:
-        void UpdateTimeBusy();
-        void UpdateTotalIncome(int64_t pricing);
-        std::vector<TableInterval> intervals;
+        void UpdateTotalIncome(int64_t pricing, int64_t minutes);
+            std::vector<TableInterval> intervals;
     public:
         bool is_empty= true;
         int64_t IDCurrentClient=-1;
@@ -15,8 +14,8 @@ class Table {
         TimeStamp totalBusy;
         int64_t totalIncome=0;
 
-        void UpdateTotal(int64_t pricing);
-        void StartSession(int64_t clientID, TimeStamp& timeStamp);
-        void CloseSession(TimeStamp& timeStamp, int64_t pricing);
-        Table()=default;
+        void UpdateTimeBusy();
+            void StartSession(int64_t clientID, TimeStamp& timeStamp);
+            void CloseSession(TimeStamp& timeStamp, int64_t pricing);
+            Table()=default;
 };
