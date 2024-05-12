@@ -32,5 +32,6 @@
 *.app
 
 # mine
-.docx
-.txt
+*.docx
+*.txt
+*.~lock*
