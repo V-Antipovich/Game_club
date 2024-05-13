@@ -65,6 +65,16 @@ CMAKE_BINARY_DIR = /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running tests..."
+	/home/vitalii/.local/share/JetBrains/Toolbox/apps/clion/bin/cmake/linux/x64/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "No interactive CMake dialog available..."
@@ -128,6 +138,19 @@ gamer_club: cmake_check_build_system
 gamer_club/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/build
 .PHONY : gamer_club/fast
+
+#=============================================================================
+# Target rules for targets named try_test
+
+# Build rule for target.
+try_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 try_test
+.PHONY : try_test
+
+# fast build rule for target.
+try_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/try_test.dir/build.make test/CMakeFiles/try_test.dir/build
+.PHONY : try_test/fast
 
 Client.o: Client.cpp.o
 .PHONY : Client.o
@@ -425,7 +448,9 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... test"
 	@echo "... gamer_club"
+	@echo "... try_test"
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"
