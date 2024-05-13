@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/timestamp_test.dir/timestamp_test.cpp.o -o timestamp_test  -lgtest_main -lgtest ../libsource_lib.a 

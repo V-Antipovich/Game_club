@@ -165,6 +165,19 @@ timestamp_test/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/build
 .PHONY : timestamp_test/fast
 
+#=============================================================================
+# Target rules for targets named input_test
+
+# Build rule for target.
+input_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 input_test
+.PHONY : input_test
+
+# fast build rule for target.
+input_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/build
+.PHONY : input_test/fast
+
 Client.o: Client.cpp.o
 .PHONY : Client.o
 
@@ -463,6 +476,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... gamer_club"
+	@echo "... input_test"
 	@echo "... source_lib"
 	@echo "... timestamp_test"
 	@echo "... Client.o"

@@ -140,6 +140,44 @@ timestamp_test/fast:
 	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/build
 .PHONY : timestamp_test/fast
 
+# Convenience name for target.
+test/CMakeFiles/input_test.dir/rule:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/input_test.dir/rule
+.PHONY : test/CMakeFiles/input_test.dir/rule
+
+# Convenience name for target.
+input_test: test/CMakeFiles/input_test.dir/rule
+.PHONY : input_test
+
+# fast build rule for target.
+input_test/fast:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/build
+.PHONY : input_test/fast
+
+input_test.o: input_test.cpp.o
+.PHONY : input_test.o
+
+# target to build an object file
+input_test.cpp.o:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/input_test.cpp.o
+.PHONY : input_test.cpp.o
+
+input_test.i: input_test.cpp.i
+.PHONY : input_test.i
+
+# target to preprocess a source file
+input_test.cpp.i:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/input_test.cpp.i
+.PHONY : input_test.cpp.i
+
+input_test.s: input_test.cpp.s
+.PHONY : input_test.s
+
+# target to generate assembly for a file
+input_test.cpp.s:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/input_test.cpp.s
+.PHONY : input_test.cpp.s
+
 timestamp_test.o: timestamp_test.cpp.o
 .PHONY : timestamp_test.o
 
@@ -173,7 +211,11 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... input_test"
 	@echo "... timestamp_test"
+	@echo "... input_test.o"
+	@echo "... input_test.i"
+	@echo "... input_test.s"
 	@echo "... timestamp_test.o"
 	@echo "... timestamp_test.i"
 	@echo "... timestamp_test.s"

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsource_lib.a CMakeFiles/source_lib.dir/ParserConsole.cpp.o CMakeFiles/source_lib.dir/ParserConsoleException.cpp.o CMakeFiles/source_lib.dir/ParserFile.cpp.o CMakeFiles/source_lib.dir/ParserFileError.cpp.o CMakeFiles/source_lib.dir/TimeStamp.cpp.o CMakeFiles/source_lib.dir/TableInterval.cpp.o CMakeFiles/source_lib.dir/Table.cpp.o CMakeFiles/source_lib.dir/Client.cpp.o CMakeFiles/source_lib.dir/ClientsBase.cpp.o CMakeFiles/source_lib.dir/GamerClubEnv.cpp.o CMakeFiles/source_lib.dir/Event.cpp.o
+/usr/bin/ranlib libsource_lib.a

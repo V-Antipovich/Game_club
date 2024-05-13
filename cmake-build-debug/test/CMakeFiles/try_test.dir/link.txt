@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/try_test.dir/try_test.cpp.o -o try_test  -lgtest_main -lgtest 

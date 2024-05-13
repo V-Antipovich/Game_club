@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/gamer_club.dir/main.cpp.o -o gamer_club  libsource_lib.a 

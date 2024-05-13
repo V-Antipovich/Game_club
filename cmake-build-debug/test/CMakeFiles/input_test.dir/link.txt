@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/input_test.dir/input_test.cpp.o -o input_test  -lgtest_main -lgtest ../libsource_lib.a 

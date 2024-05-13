@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/environment_test.dir/environment_test.cpp.o -o environment_test  -lgtest_main -lgtest ../libsource_lib.a 

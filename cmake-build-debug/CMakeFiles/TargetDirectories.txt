@@ -4,6 +4,7 @@
 /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/CMakeFiles/edit_cache.dir
 /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/CMakeFiles/timestamp_test.dir
+/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/CMakeFiles/input_test.dir
 /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/CMakeFiles/test.dir
 /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/CMakeFiles/edit_cache.dir
 /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/CMakeFiles/rebuild_cache.dir
