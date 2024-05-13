@@ -17,8 +17,7 @@ bool TimeStamp::CorrectMinutes(int64_t m) {
 }
 
 void TimeStamp::Validate(std::string& rawTimeStamp) {
-    if (!std::regex_match(rawTimeStamp.begin(), rawTimeStamp.end(), formatMatch) && CorrectHours(stoll(rawTimeStamp.substr(0, 2))) &&
-            CorrectMinutes(stoll(rawTimeStamp.substr(3, 2))) ) {
+    if (!(std::regex_match(rawTimeStamp.begin(), rawTimeStamp.end(), formatMatch) && CorrectHours(stoll(rawTimeStamp.substr(0, 2))) && CorrectMinutes(stoll(rawTimeStamp.substr(3, 2))))) {
         throw std::runtime_error("Incorrect format");
     }
 }

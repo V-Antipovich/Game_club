@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../TimeStamp.h"
 
-TEST(TimeStampTest, ConstructorStringTest) {
+TEST(TimeStampTest, ConstructorStringOKTest) {
     std::string raw = "14:50";
     TimeStamp ts(raw);
     EXPECT_EQ(ts.hours, 14);
@@ -28,5 +28,29 @@ TEST(TimeStampTest, ConstructorStringTest) {
     EXPECT_EQ(ts4.minutes, 49);
 }
 
-
-// TODO: ломанные тесты: не та строка, неправильное время
+TEST(TimeStampTest, ConstructorStringErrorTest) {
+    EXPECT_ANY_THROW({
+        std::string raw1 = "00.00";
+        TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+         std::string raw1 = "10 43";
+         TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+        std::string raw1 = "101:4233";
+        TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+        std::string raw1 = "101:42";
+        TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+        std::string raw1 = "10:430";
+        TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+        std::string raw1 = "-10:430";
+        TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+        std::string raw1 = "10:60";
+        TimeStamp ts(raw1);};);
+    EXPECT_ANY_THROW({
+        std::string raw1 = "24:30";
+        TimeStamp ts(raw1);};);
+}
