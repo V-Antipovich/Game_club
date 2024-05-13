@@ -1,3 +1,3 @@
-/home/vitalii/Documents/Programming/cpp/game_club_yadro/cmake-build-debug/CMakeFiles/gamer_club.dir
-/home/vitalii/Documents/Programming/cpp/game_club_yadro/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/vitalii/Documents/Programming/cpp/game_club_yadro/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/CMakeFiles/gamer_club.dir
+/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/CMakeFiles/rebuild_cache.dir
