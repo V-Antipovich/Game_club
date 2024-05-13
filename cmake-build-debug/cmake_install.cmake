@@ -1,4 +1,4 @@
-# Install script for directory: /home/vitalii/Documents/Programming/cpp/game_club_yadro
+# Install script for directory: /home/vitalii/Documents/Programming/cpp/Game_club
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/vitalii/Documents/Programming/cpp/game_club_yadro/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

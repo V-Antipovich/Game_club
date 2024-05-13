@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="game_club_yadro"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamer_club">
+				<Option output="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/gamer_club" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/../../../../include/c++/13"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/../../../../include/c++/13/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/../../../../include/c++/13/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 gamer_club"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="gamer_club/fast">
+				<Option output="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/gamer_club" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/../../../../include/c++/13"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/../../../../include/c++/13/x86_64-redhat-linux"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/../../../../include/c++/13/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-redhat-linux/13/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 gamer_club/fast"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/gmake -j8 -f &quot;/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/Client.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/Client.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ClientsBase.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ClientsBase.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/Event.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/Event.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/GamerClubEnv.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/GamerClubEnv.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserConsole.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserConsole.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserConsoleException.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserConsoleException.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserFile.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserFile.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserFileError.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/ParserFileError.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/Table.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/Table.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/TableInterval.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/TableInterval.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/TimeStamp.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/TimeStamp.h">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/main.cpp">
+			<Option target="gamer_club"/>
+		</Unit>
+		<Unit filename="/home/vitalii/Documents/Programming/cpp/Game_club/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
