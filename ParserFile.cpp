@@ -31,7 +31,7 @@ ParserFile::ParserFile(std::string& path) {
         endWorkTime = TimeStamp(rawStartEnd.substr(6, 5));
 
         std::getline(in, rawCostPerHour);
-        if (!(in.good() && std::regex_match(rawCostPerHour.begin(), rawCostPerHour.end(), NumMatch))) {
+        if (!((in.good()|| in.eof()) && std::regex_match(rawCostPerHour.begin(), rawCostPerHour.end(), NumMatch))) {
             throw ParserFileError(rawCostPerHour);
         }
         costPerHour = stoll(rawCostPerHour);

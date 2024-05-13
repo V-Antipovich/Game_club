@@ -9,15 +9,6 @@ add_executable(gamer_club
         ParserConsoleException.cpp
         ParserFile.cpp
         ParserFileError.cpp
-#        Events/BaseEvent.cpp
-#        Events/ClientCameEvent.cpp
-#        Events/ClientSatEvent.cpp
-#        Events/NameTableRequiredEvent.cpp
-#        Events/NameRequiredEvent.cpp
-#        Events/EventsFactory.cpp
-#        Events/ClientGoneEvent.cpp
-#        Events/ClientWaitingEvent.cpp
-#        Events/ErrorEvent.cpp
         TimeStamp.cpp
         TableInterval.cpp
         Table.cpp

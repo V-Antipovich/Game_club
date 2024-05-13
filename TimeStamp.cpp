@@ -49,5 +49,9 @@ int64_t TimeStamp::operator-(const TimeStamp &other) const{
 }
 
 bool TimeStamp::operator<(const TimeStamp &rhs) const {
-    return hours<rhs.hours || (hours == rhs.hours && minutes < rhs.minutes);
+    return hours < rhs.hours || (hours == rhs.hours && minutes < rhs.minutes);
+}
+
+bool TimeStamp::operator>(const TimeStamp &rhs) const {
+    return hours > rhs.hours || (hours == rhs.hours && minutes > rhs.minutes);
 }

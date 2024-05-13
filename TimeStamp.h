@@ -36,4 +36,6 @@ public:
     int64_t operator-(const TimeStamp& other) const;
 
     bool operator<(const TimeStamp& rhs) const;
+
+    bool operator>(const TimeStamp& rhs) const;
 };
