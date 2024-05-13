@@ -1,5 +1,9 @@
 #include "ParserFile.h"
 
+bool ParserFile::IsTimeString(std::string& timeString) {
+    return TimeStamp::CorrectHours(stoll(timeString.substr(0, 2))) && TimeStamp::CorrectMinutes(stoll(timeString.substr(3, 2)));
+}
+
 ParserFile::ParserFile(std::string& path) {
     std::ifstream in;
     in.open(path);
@@ -24,9 +28,18 @@ ParserFile::ParserFile(std::string& path) {
         sst >> tablesNum;
 
         std::getline(in, rawStartEnd);
-        if (!(in.good() && std::regex_match(rawStartEnd.begin(), rawStartEnd.end(), startEndMatch))) {
+        if (in.good() && std::regex_match(rawStartEnd.begin(), rawStartEnd.end(), startEndMatch)) {
+            auto s1 = rawStartEnd.substr(0, 5);
+            auto s2 = rawStartEnd.substr(6, 5);
+            if (!IsTimeString(s1) || !IsTimeString(s2)) {
+                throw ParserFileError(rawStartEnd);
+            }
+        } else {
             throw ParserFileError(rawStartEnd);
         }
+//        if (!(in.good() && std::regex_match(rawStartEnd.begin(), rawStartEnd.end(), startEndMatch) && (std::string s1 = rawStartEnd.substr(0, 5); IsTimeString(s1)) && IsTimeString(rawStartEnd.substr(6, 5)))) {
+//            throw ParserFileError(rawStartEnd);
+//        }
         startWorkTime = TimeStamp(rawStartEnd.substr(0, 5));
         endWorkTime = TimeStamp(rawStartEnd.substr(6, 5));
 

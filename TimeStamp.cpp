@@ -8,6 +8,21 @@ std::string TimeStamp::TwoDigitNumber(int64_t n) {
     return str_n;
 }
 
+bool TimeStamp::CorrectHours(int64_t h) {
+    return (0 <= h && h <= 23);
+}
+
+bool TimeStamp::CorrectMinutes(int64_t m) {
+    return (0 <=m && m <= 59);
+}
+
+void TimeStamp::Validate(std::string& rawTimeStamp) {
+    if (!std::regex_match(rawTimeStamp.begin(), rawTimeStamp.end(), formatMatch) && CorrectHours(stoll(rawTimeStamp.substr(0, 2))) &&
+            CorrectMinutes(stoll(rawTimeStamp.substr(3, 2))) ) {
+        throw std::runtime_error("Incorrect format");
+    }
+}
+
 int64_t TimeStamp::ConvertToMinutes() const {
     return hours*60 + minutes;
 }
@@ -28,6 +43,7 @@ TimeStamp::TimeStamp(TimeStamp &other) {
 }
 
 TimeStamp::TimeStamp(std::string &rawTimeStamp) {
+    Validate(rawTimeStamp);
     // Используем только если уверены в правильности формата
     hours = stoll(rawTimeStamp.substr(0, 2));
     minutes = stoll(rawTimeStamp.substr(3, 2));

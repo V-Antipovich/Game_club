@@ -21,7 +21,7 @@ class ParserFile {
         const std::string nameKey = "name";
         const std::string tableNumKey = "tableNum";
         const std::unordered_set<int64_t> allowed_codes{1, 2, 3, 4};
-
+        static bool IsTimeString(std::string& timeString);
     public:
         explicit ParserFile(std::string& path);
         std::queue<Event*> inputEventsQueue;

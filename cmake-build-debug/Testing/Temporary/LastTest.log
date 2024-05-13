@@ -1,3 +1,29 @@
-Start testing: May 13 23:01 MSK
+Start testing: May 14 00:37 MSK
 ----------------------------------------------------------
-End testing: May 13 23:01 MSK
+1/1 Testing: timestamp_test
+1/1 Test: timestamp_test
+Command: "/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/timestamp_test"
+Directory: /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test
+"timestamp_test" start time: May 14 00:37 MSK
+Output:
+----------------------------------------------------------
+Running main() from /home/vitalii/Documents/tmp/googletest/googletest/src/gtest_main.cc
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TimeStampTest
+[ RUN      ] TimeStampTest.ConstructorStringTest
+[       OK ] TimeStampTest.ConstructorStringTest (1 ms)
+[----------] 1 test from TimeStampTest (1 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (1 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"timestamp_test" end time: May 14 00:37 MSK
+"timestamp_test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 14 00:37 MSK

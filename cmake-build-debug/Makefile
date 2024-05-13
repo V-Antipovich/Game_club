@@ -127,6 +127,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named source_lib
+
+# Build rule for target.
+source_lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 source_lib
+.PHONY : source_lib
+
+# fast build rule for target.
+source_lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/build
+.PHONY : source_lib/fast
+
+#=============================================================================
 # Target rules for targets named gamer_club
 
 # Build rule for target.
@@ -140,24 +153,24 @@ gamer_club/fast:
 .PHONY : gamer_club/fast
 
 #=============================================================================
-# Target rules for targets named try_test
+# Target rules for targets named timestamp_test
 
 # Build rule for target.
-try_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 try_test
-.PHONY : try_test
+timestamp_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 timestamp_test
+.PHONY : timestamp_test
 
 # fast build rule for target.
-try_test/fast:
-	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/try_test.dir/build.make test/CMakeFiles/try_test.dir/build
-.PHONY : try_test/fast
+timestamp_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/build
+.PHONY : timestamp_test/fast
 
 Client.o: Client.cpp.o
 .PHONY : Client.o
 
 # target to build an object file
 Client.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Client.cpp.o
 .PHONY : Client.cpp.o
 
 Client.i: Client.cpp.i
@@ -165,7 +178,7 @@ Client.i: Client.cpp.i
 
 # target to preprocess a source file
 Client.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Client.cpp.i
 .PHONY : Client.cpp.i
 
 Client.s: Client.cpp.s
@@ -173,7 +186,7 @@ Client.s: Client.cpp.s
 
 # target to generate assembly for a file
 Client.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Client.cpp.s
 .PHONY : Client.cpp.s
 
 ClientsBase.o: ClientsBase.cpp.o
@@ -181,7 +194,7 @@ ClientsBase.o: ClientsBase.cpp.o
 
 # target to build an object file
 ClientsBase.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ClientsBase.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ClientsBase.cpp.o
 .PHONY : ClientsBase.cpp.o
 
 ClientsBase.i: ClientsBase.cpp.i
@@ -189,7 +202,7 @@ ClientsBase.i: ClientsBase.cpp.i
 
 # target to preprocess a source file
 ClientsBase.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ClientsBase.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ClientsBase.cpp.i
 .PHONY : ClientsBase.cpp.i
 
 ClientsBase.s: ClientsBase.cpp.s
@@ -197,7 +210,7 @@ ClientsBase.s: ClientsBase.cpp.s
 
 # target to generate assembly for a file
 ClientsBase.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ClientsBase.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ClientsBase.cpp.s
 .PHONY : ClientsBase.cpp.s
 
 Event.o: Event.cpp.o
@@ -205,7 +218,7 @@ Event.o: Event.cpp.o
 
 # target to build an object file
 Event.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Event.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Event.cpp.o
 .PHONY : Event.cpp.o
 
 Event.i: Event.cpp.i
@@ -213,7 +226,7 @@ Event.i: Event.cpp.i
 
 # target to preprocess a source file
 Event.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Event.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Event.cpp.i
 .PHONY : Event.cpp.i
 
 Event.s: Event.cpp.s
@@ -221,7 +234,7 @@ Event.s: Event.cpp.s
 
 # target to generate assembly for a file
 Event.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Event.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Event.cpp.s
 .PHONY : Event.cpp.s
 
 GamerClubEnv.o: GamerClubEnv.cpp.o
@@ -229,7 +242,7 @@ GamerClubEnv.o: GamerClubEnv.cpp.o
 
 # target to build an object file
 GamerClubEnv.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/GamerClubEnv.cpp.o
 .PHONY : GamerClubEnv.cpp.o
 
 GamerClubEnv.i: GamerClubEnv.cpp.i
@@ -237,7 +250,7 @@ GamerClubEnv.i: GamerClubEnv.cpp.i
 
 # target to preprocess a source file
 GamerClubEnv.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/GamerClubEnv.cpp.i
 .PHONY : GamerClubEnv.cpp.i
 
 GamerClubEnv.s: GamerClubEnv.cpp.s
@@ -245,7 +258,7 @@ GamerClubEnv.s: GamerClubEnv.cpp.s
 
 # target to generate assembly for a file
 GamerClubEnv.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/GamerClubEnv.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/GamerClubEnv.cpp.s
 .PHONY : GamerClubEnv.cpp.s
 
 ParserConsole.o: ParserConsole.cpp.o
@@ -253,7 +266,7 @@ ParserConsole.o: ParserConsole.cpp.o
 
 # target to build an object file
 ParserConsole.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserConsole.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserConsole.cpp.o
 .PHONY : ParserConsole.cpp.o
 
 ParserConsole.i: ParserConsole.cpp.i
@@ -261,7 +274,7 @@ ParserConsole.i: ParserConsole.cpp.i
 
 # target to preprocess a source file
 ParserConsole.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserConsole.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserConsole.cpp.i
 .PHONY : ParserConsole.cpp.i
 
 ParserConsole.s: ParserConsole.cpp.s
@@ -269,7 +282,7 @@ ParserConsole.s: ParserConsole.cpp.s
 
 # target to generate assembly for a file
 ParserConsole.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserConsole.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserConsole.cpp.s
 .PHONY : ParserConsole.cpp.s
 
 ParserConsoleException.o: ParserConsoleException.cpp.o
@@ -277,7 +290,7 @@ ParserConsoleException.o: ParserConsoleException.cpp.o
 
 # target to build an object file
 ParserConsoleException.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserConsoleException.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserConsoleException.cpp.o
 .PHONY : ParserConsoleException.cpp.o
 
 ParserConsoleException.i: ParserConsoleException.cpp.i
@@ -285,7 +298,7 @@ ParserConsoleException.i: ParserConsoleException.cpp.i
 
 # target to preprocess a source file
 ParserConsoleException.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserConsoleException.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserConsoleException.cpp.i
 .PHONY : ParserConsoleException.cpp.i
 
 ParserConsoleException.s: ParserConsoleException.cpp.s
@@ -293,7 +306,7 @@ ParserConsoleException.s: ParserConsoleException.cpp.s
 
 # target to generate assembly for a file
 ParserConsoleException.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserConsoleException.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserConsoleException.cpp.s
 .PHONY : ParserConsoleException.cpp.s
 
 ParserFile.o: ParserFile.cpp.o
@@ -301,7 +314,7 @@ ParserFile.o: ParserFile.cpp.o
 
 # target to build an object file
 ParserFile.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserFile.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserFile.cpp.o
 .PHONY : ParserFile.cpp.o
 
 ParserFile.i: ParserFile.cpp.i
@@ -309,7 +322,7 @@ ParserFile.i: ParserFile.cpp.i
 
 # target to preprocess a source file
 ParserFile.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserFile.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserFile.cpp.i
 .PHONY : ParserFile.cpp.i
 
 ParserFile.s: ParserFile.cpp.s
@@ -317,7 +330,7 @@ ParserFile.s: ParserFile.cpp.s
 
 # target to generate assembly for a file
 ParserFile.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserFile.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserFile.cpp.s
 .PHONY : ParserFile.cpp.s
 
 ParserFileError.o: ParserFileError.cpp.o
@@ -325,7 +338,7 @@ ParserFileError.o: ParserFileError.cpp.o
 
 # target to build an object file
 ParserFileError.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserFileError.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserFileError.cpp.o
 .PHONY : ParserFileError.cpp.o
 
 ParserFileError.i: ParserFileError.cpp.i
@@ -333,7 +346,7 @@ ParserFileError.i: ParserFileError.cpp.i
 
 # target to preprocess a source file
 ParserFileError.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserFileError.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserFileError.cpp.i
 .PHONY : ParserFileError.cpp.i
 
 ParserFileError.s: ParserFileError.cpp.s
@@ -341,7 +354,7 @@ ParserFileError.s: ParserFileError.cpp.s
 
 # target to generate assembly for a file
 ParserFileError.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/ParserFileError.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/ParserFileError.cpp.s
 .PHONY : ParserFileError.cpp.s
 
 Table.o: Table.cpp.o
@@ -349,7 +362,7 @@ Table.o: Table.cpp.o
 
 # target to build an object file
 Table.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Table.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Table.cpp.o
 .PHONY : Table.cpp.o
 
 Table.i: Table.cpp.i
@@ -357,7 +370,7 @@ Table.i: Table.cpp.i
 
 # target to preprocess a source file
 Table.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Table.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Table.cpp.i
 .PHONY : Table.cpp.i
 
 Table.s: Table.cpp.s
@@ -365,7 +378,7 @@ Table.s: Table.cpp.s
 
 # target to generate assembly for a file
 Table.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/Table.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/Table.cpp.s
 .PHONY : Table.cpp.s
 
 TableInterval.o: TableInterval.cpp.o
@@ -373,7 +386,7 @@ TableInterval.o: TableInterval.cpp.o
 
 # target to build an object file
 TableInterval.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/TableInterval.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/TableInterval.cpp.o
 .PHONY : TableInterval.cpp.o
 
 TableInterval.i: TableInterval.cpp.i
@@ -381,7 +394,7 @@ TableInterval.i: TableInterval.cpp.i
 
 # target to preprocess a source file
 TableInterval.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/TableInterval.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/TableInterval.cpp.i
 .PHONY : TableInterval.cpp.i
 
 TableInterval.s: TableInterval.cpp.s
@@ -389,7 +402,7 @@ TableInterval.s: TableInterval.cpp.s
 
 # target to generate assembly for a file
 TableInterval.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/TableInterval.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/TableInterval.cpp.s
 .PHONY : TableInterval.cpp.s
 
 TimeStamp.o: TimeStamp.cpp.o
@@ -397,7 +410,7 @@ TimeStamp.o: TimeStamp.cpp.o
 
 # target to build an object file
 TimeStamp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/TimeStamp.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/TimeStamp.cpp.o
 .PHONY : TimeStamp.cpp.o
 
 TimeStamp.i: TimeStamp.cpp.i
@@ -405,7 +418,7 @@ TimeStamp.i: TimeStamp.cpp.i
 
 # target to preprocess a source file
 TimeStamp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/TimeStamp.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/TimeStamp.cpp.i
 .PHONY : TimeStamp.cpp.i
 
 TimeStamp.s: TimeStamp.cpp.s
@@ -413,7 +426,7 @@ TimeStamp.s: TimeStamp.cpp.s
 
 # target to generate assembly for a file
 TimeStamp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/gamer_club.dir/build.make CMakeFiles/gamer_club.dir/TimeStamp.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/source_lib.dir/build.make CMakeFiles/source_lib.dir/TimeStamp.cpp.s
 .PHONY : TimeStamp.cpp.s
 
 main.o: main.cpp.o
@@ -450,7 +463,8 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... gamer_club"
-	@echo "... try_test"
+	@echo "... source_lib"
+	@echo "... timestamp_test"
 	@echo "... Client.o"
 	@echo "... Client.i"
 	@echo "... Client.s"

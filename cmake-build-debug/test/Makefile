@@ -127,42 +127,42 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-test/CMakeFiles/try_test.dir/rule:
-	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/try_test.dir/rule
-.PHONY : test/CMakeFiles/try_test.dir/rule
+test/CMakeFiles/timestamp_test.dir/rule:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/timestamp_test.dir/rule
+.PHONY : test/CMakeFiles/timestamp_test.dir/rule
 
 # Convenience name for target.
-try_test: test/CMakeFiles/try_test.dir/rule
-.PHONY : try_test
+timestamp_test: test/CMakeFiles/timestamp_test.dir/rule
+.PHONY : timestamp_test
 
 # fast build rule for target.
-try_test/fast:
-	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/try_test.dir/build.make test/CMakeFiles/try_test.dir/build
-.PHONY : try_test/fast
+timestamp_test/fast:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/build
+.PHONY : timestamp_test/fast
 
-try_test.o: try_test.cpp.o
-.PHONY : try_test.o
+timestamp_test.o: timestamp_test.cpp.o
+.PHONY : timestamp_test.o
 
 # target to build an object file
-try_test.cpp.o:
-	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/try_test.dir/build.make test/CMakeFiles/try_test.dir/try_test.cpp.o
-.PHONY : try_test.cpp.o
+timestamp_test.cpp.o:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/timestamp_test.cpp.o
+.PHONY : timestamp_test.cpp.o
 
-try_test.i: try_test.cpp.i
-.PHONY : try_test.i
+timestamp_test.i: timestamp_test.cpp.i
+.PHONY : timestamp_test.i
 
 # target to preprocess a source file
-try_test.cpp.i:
-	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/try_test.dir/build.make test/CMakeFiles/try_test.dir/try_test.cpp.i
-.PHONY : try_test.cpp.i
+timestamp_test.cpp.i:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/timestamp_test.cpp.i
+.PHONY : timestamp_test.cpp.i
 
-try_test.s: try_test.cpp.s
-.PHONY : try_test.s
+timestamp_test.s: timestamp_test.cpp.s
+.PHONY : timestamp_test.s
 
 # target to generate assembly for a file
-try_test.cpp.s:
-	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/try_test.dir/build.make test/CMakeFiles/try_test.dir/try_test.cpp.s
-.PHONY : try_test.cpp.s
+timestamp_test.cpp.s:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/timestamp_test.dir/build.make test/CMakeFiles/timestamp_test.dir/timestamp_test.cpp.s
+.PHONY : timestamp_test.cpp.s
 
 # Help Target
 help:
@@ -173,10 +173,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
-	@echo "... try_test"
-	@echo "... try_test.o"
-	@echo "... try_test.i"
-	@echo "... try_test.s"
+	@echo "... timestamp_test"
+	@echo "... timestamp_test.o"
+	@echo "... timestamp_test.i"
+	@echo "... timestamp_test.s"
 .PHONY : help
 
 

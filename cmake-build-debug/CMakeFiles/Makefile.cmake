@@ -49,6 +49,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/source_lib.dir/DependInfo.cmake"
   "CMakeFiles/gamer_club.dir/DependInfo.cmake"
-  "test/CMakeFiles/try_test.dir/DependInfo.cmake"
+  "test/CMakeFiles/timestamp_test.dir/DependInfo.cmake"
   )
