@@ -1,14 +1,15 @@
 #include "ParserFile.h"
 
-bool ParserFile::IsTimeString(std::string& timeString) {
-    return TimeStamp::CorrectHours(stoll(timeString.substr(0, 2))) && TimeStamp::CorrectMinutes(stoll(timeString.substr(3, 2)));
+bool ParserFile::IsTimeString(std::string &timeString) {
+    return TimeStamp::CorrectHours(stoll(timeString.substr(0, 2))) &&
+           TimeStamp::CorrectMinutes(stoll(timeString.substr(3, 2)));
 }
 
-ParserFile::ParserFile(std::string& path) {
+ParserFile::ParserFile(std::string &path) {
     std::ifstream in;
     in.open(path);
-    int64_t eventType=0;
-    int64_t tableNum=0;
+    int64_t eventType = 0;
+    int64_t tableNum = 0;
     std::string rawTableNum;
     std::string rawStartEnd;
     std::string rawTimeStamp;
@@ -42,7 +43,7 @@ ParserFile::ParserFile(std::string& path) {
         throw ParserFileError(rawStartEnd);
     }
     std::getline(in, rawCostPerHour);
-    if (!((in.good()|| in.eof()) && std::regex_match(rawCostPerHour.begin(), rawCostPerHour.end(), NumMatch))) {
+    if (!((in.good() || in.eof()) && std::regex_match(rawCostPerHour.begin(), rawCostPerHour.end(), NumMatch))) {
         throw ParserFileError(rawCostPerHour);
     }
     costPerHour = stoll(rawCostPerHour);

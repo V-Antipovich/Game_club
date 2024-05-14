@@ -5,11 +5,11 @@
 #include <fstream>
 #include <map>
 #include <regex>
+#include <queue>
 #include <sstream>
 #include <unordered_map>
 #include <unordered_set>
 #include <vector>
-#include <queue>
 #include "Event.h"
 #include "ParserFileError.h"
 
@@ -19,7 +19,6 @@ class ParserFile {
         const std::regex startEndMatch = std::regex("[0-9]{2}:[0-9]{2} [0-9]{2}:[0-9]{2}");
         const std::regex eventMatch1 = std::regex("[0-9]{2}:[0-9]{2} [134] [a-z0-9_-]+");
         const std::regex eventMatch2 = std::regex("[0-9]{2}:[0-9]{2} 2 [a-z0-9_-]+ [1-9][0-9]*");
-//        const std::unordered_set<int64_t> allowed_codes{1, 2, 3, 4};
         static bool IsTimeString(std::string& timeString);
     public:
         explicit ParserFile(std::string& path);

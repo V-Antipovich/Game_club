@@ -1,8 +1,5 @@
-//
-// Created by vitalii on 5/9/24.
-//
-
 #include "ParserConsole.h"
+
 ParserConsole::ParserConsole(int argc, char *argv[]) {
     if (argc != 2) {
         throw ParserConsoleException(InvalidArgsNumExceptionMessage);
@@ -13,6 +10,7 @@ ParserConsole::ParserConsole(int argc, char *argv[]) {
         throw ParserConsoleException(InvalidFileMessage);
     }
 }
+
 std::string ParserConsole::GetInputFile() const {
     return inputFilePath;
 }

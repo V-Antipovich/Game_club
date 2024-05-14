@@ -1,15 +1,15 @@
 #pragma once
 
+#include <algorithm>
 #include <deque>
+#include <functional>
+#include <iostream>
 #include <queue>
 #include <set>
-//#include <unordered_set>
 #include "ClientsBase.h"
-#include "Table.h"
 #include "Event.h"
-#include <iostream>
-#include <functional>
-#include <algorithm>
+#include "Table.h"
+
 class GamerClubEnv: public ClientsBase {
     typedef void (GamerClubEnv::*MemberFunPointer)(Event*);
     const int64_t ClientCameActionCode=1;

@@ -3,13 +3,13 @@
 #include "../ParserFile.h"
 #include <sstream>
 
-std::vector<std::string> MySplit(std::string& str, char del=' ') {
+std::vector<std::string> MySplit(std::string &str, char del = ' ') {
     std::string tmp;
     std::vector<std::string> v;
-    for (char i : str){
+    for (char i: str) {
         if (i != del) {
             tmp += i;
-        } else{
+        } else {
             v.push_back(tmp);
             tmp.clear();
         }
@@ -18,7 +18,7 @@ std::vector<std::string> MySplit(std::string& str, char del=' ') {
     return v;
 }
 
-std::string workoutWrong(ParserFile& pf) {
+std::string workoutWrong(ParserFile &pf) {
     try {
         GamerClubEnv env(pf.tablesNum, pf.costPerHour, pf.startWorkTime, pf.endWorkTime, pf.inputEventsQueue);
         env.HandleInputEvents();
@@ -28,12 +28,12 @@ std::string workoutWrong(ParserFile& pf) {
         std::string output = buffer.str();
         std::cout.rdbuf(oldbuff);
         return output;
-    } catch (const ParserFileError& pfe) {
+    } catch (const ParserFileError &pfe) {
         return pfe.what();
     }
 }
 
-std::string getbufOutput(std::string& filename) {
+std::string getbufOutput(std::string &filename) {
     ParserFile pf(filename);
     GamerClubEnv env(pf.tablesNum, pf.costPerHour, pf.startWorkTime, pf.endWorkTime, pf.inputEventsQueue);
     env.HandleInputEvents();
@@ -72,7 +72,7 @@ TEST(EnvTest, CommonOutput1) {
                                 "1 70 05:58\n"
                                 "2 30 02:18\n"
                                 "3 90 08:01\n";
-    EXPECT_EQ(output,correctOutput);
+    EXPECT_EQ(output, correctOutput);
 }
 
 TEST(EnvTest, CommonOutput2) {
@@ -262,4 +262,3 @@ TEST(EnvTest, CommonOutput7) {
                                 "1 10 01:12\n";
     EXPECT_EQ(output, correctOutPut);
 }
-

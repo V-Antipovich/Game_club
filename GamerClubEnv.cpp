@@ -1,6 +1,6 @@
 #include "GamerClubEnv.h"
 
-bool GamerClubEnv::IsClosed(TimeStamp& tm) {
+bool GamerClubEnv::IsClosed(TimeStamp &tm) {
     return tm < startWorkTime || tm > endWorkTime;
 }
 
@@ -99,8 +99,10 @@ void GamerClubEnv::ClientGoneAction(Event *event) {
     }
 }
 
-GamerClubEnv::GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &startWorkTime, TimeStamp &endWorkTime, std::queue<Event*>& inputQueue)
-        : numTables(numTables), costPerHour(costPerHour), startWorkTime(startWorkTime), endWorkTime(endWorkTime), inputQueue(inputQueue) {
+GamerClubEnv::GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &startWorkTime, TimeStamp &endWorkTime,
+                           std::queue<Event *> &inputQueue)
+        : numTables(numTables), costPerHour(costPerHour), startWorkTime(startWorkTime), endWorkTime(endWorkTime),
+          inputQueue(inputQueue) {
     for (int64_t i = 1; i <= numTables; ++i) {
         tables[i];
         free_tables.insert(i);
@@ -112,7 +114,7 @@ GamerClubEnv::GamerClubEnv(int64_t numTables, int64_t costPerHour, TimeStamp &st
 }
 
 void GamerClubEnv::HandleInputEvents() {
-    Event* event = nullptr;
+    Event *event = nullptr;
     while (!inputQueue.empty()) {
         event = inputQueue.front();
         inputQueue.pop();
@@ -137,14 +139,14 @@ void GamerClubEnv::HandleInputEvents() {
 }
 
 void GamerClubEnv::Print() {
-    Event* event = nullptr;
-    std::cout<<startWorkTime.PrintTime()<<"\n";
+    Event *event = nullptr;
+    std::cout << startWorkTime.PrintTime() << "\n";
     while (!outputQueue.empty()) {
         event = outputQueue.front();
         outputQueue.pop();
-        std::cout<<event->to_str()<<"\n";
+        std::cout << event->to_str() << "\n";
     }
-    std::cout<<endWorkTime.PrintTime()<<"\n";
+    std::cout << endWorkTime.PrintTime() << "\n";
     for (int64_t t = 1; t <= numTables; ++t) {
         tables[t].UpdateTimeBusy();
         std::cout << t << " " << tables[t].totalIncome << " " << tables[t].totalBusy.PrintTime() << "\n";
