@@ -10,3 +10,5 @@ add_test([=[input_test]=] "/home/vitalii/Documents/Programming/cpp/Game_club/cma
 set_tests_properties([=[input_test]=] PROPERTIES  _BACKTRACE_TRIPLES "/home/vitalii/Documents/Programming/cpp/Game_club/test/CMakeLists.txt;30;add_test;/home/vitalii/Documents/Programming/cpp/Game_club/test/CMakeLists.txt;0;")
 add_test([=[parser_test]=] "/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/parser_test")
 set_tests_properties([=[parser_test]=] PROPERTIES  _BACKTRACE_TRIPLES "/home/vitalii/Documents/Programming/cpp/Game_club/test/CMakeLists.txt;46;add_test;/home/vitalii/Documents/Programming/cpp/Game_club/test/CMakeLists.txt;0;")
+add_test([=[environment_test]=] "/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug/test/environment_test")
+set_tests_properties([=[environment_test]=] PROPERTIES  _BACKTRACE_TRIPLES "/home/vitalii/Documents/Programming/cpp/Game_club/test/CMakeLists.txt;62;add_test;/home/vitalii/Documents/Programming/cpp/Game_club/test/CMakeLists.txt;0;")

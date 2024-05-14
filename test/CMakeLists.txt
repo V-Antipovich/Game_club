@@ -47,3 +47,19 @@ add_test(
         NAME parser_test
         COMMAND parser_test
 )
+
+add_executable(
+        environment_test environment_test.cpp
+)
+
+target_link_libraries(
+        environment_test
+        gtest_main
+        gtest
+        source_lib
+)
+
+add_test(
+        NAME environment_test
+        COMMAND environment_test
+)

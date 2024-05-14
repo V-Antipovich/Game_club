@@ -168,6 +168,44 @@ parser_test/fast:
 	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/build
 .PHONY : parser_test/fast
 
+# Convenience name for target.
+test/CMakeFiles/environment_test.dir/rule:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/environment_test.dir/rule
+.PHONY : test/CMakeFiles/environment_test.dir/rule
+
+# Convenience name for target.
+environment_test: test/CMakeFiles/environment_test.dir/rule
+.PHONY : environment_test
+
+# fast build rule for target.
+environment_test/fast:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/environment_test.dir/build.make test/CMakeFiles/environment_test.dir/build
+.PHONY : environment_test/fast
+
+environment_test.o: environment_test.cpp.o
+.PHONY : environment_test.o
+
+# target to build an object file
+environment_test.cpp.o:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/environment_test.dir/build.make test/CMakeFiles/environment_test.dir/environment_test.cpp.o
+.PHONY : environment_test.cpp.o
+
+environment_test.i: environment_test.cpp.i
+.PHONY : environment_test.i
+
+# target to preprocess a source file
+environment_test.cpp.i:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/environment_test.dir/build.make test/CMakeFiles/environment_test.dir/environment_test.cpp.i
+.PHONY : environment_test.cpp.i
+
+environment_test.s: environment_test.cpp.s
+.PHONY : environment_test.s
+
+# target to generate assembly for a file
+environment_test.cpp.s:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/environment_test.dir/build.make test/CMakeFiles/environment_test.dir/environment_test.cpp.s
+.PHONY : environment_test.cpp.s
+
 input_test.o: input_test.cpp.o
 .PHONY : input_test.o
 
@@ -249,9 +287,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... environment_test"
 	@echo "... input_test"
 	@echo "... parser_test"
 	@echo "... timestamp_test"
+	@echo "... environment_test.o"
+	@echo "... environment_test.i"
+	@echo "... environment_test.s"
 	@echo "... input_test.o"
 	@echo "... input_test.i"
 	@echo "... input_test.s"

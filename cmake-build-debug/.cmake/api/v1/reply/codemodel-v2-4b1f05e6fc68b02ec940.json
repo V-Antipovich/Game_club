@@ -1,0 +1,124 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						1,
+						4
+					]
+				},
+				{
+					"build" : "test",
+					"jsonFile" : "directory-test-Debug-451c0598f41488bb20b9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "test",
+					"targetIndexes" : 
+					[
+						0,
+						2,
+						3,
+						5
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "game_club_yadro",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "environment_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-environment_test-Debug-e69b3709379bc3d9c61e.json",
+					"name" : "environment_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "gamer_club::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gamer_club-Debug-28ac9d6c826898c5dc87.json",
+					"name" : "gamer_club",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "input_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-input_test-Debug-4d987e1ac17ffa1699ef.json",
+					"name" : "input_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "parser_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-parser_test-Debug-7844882220c8e273a1e2.json",
+					"name" : "parser_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "source_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-source_lib-Debug-fba075777edc51700204.json",
+					"name" : "source_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "timestamp_test::@36f028580bb02cc8272a",
+					"jsonFile" : "target-timestamp_test-Debug-d460f2ac8ae81c701347.json",
+					"name" : "timestamp_test",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug",
+		"source" : "/home/vitalii/Documents/Programming/cpp/Game_club"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -50,7 +50,8 @@ ParserFile::ParserFile(std::string& path) {
     Event *event = nullptr;
     bool first = true;
     while (std::getline(in, rawEvent)) {
-        if (!((in.good() || in.eof()) && std::regex_match(rawEvent.begin(), rawEvent.end(), eventMatch))) {
+        if (!((in.good() || in.eof()) && (std::regex_match(rawEvent.begin(), rawEvent.end(), eventMatch1) ||
+                                          std::regex_match(rawEvent.begin(), rawEvent.end(), eventMatch2)))) {
             throw ParserFileError(rawEvent);
         }
         std::stringstream ss(rawEvent);

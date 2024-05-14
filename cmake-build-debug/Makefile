@@ -191,6 +191,19 @@ parser_test/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/build
 .PHONY : parser_test/fast
 
+#=============================================================================
+# Target rules for targets named environment_test
+
+# Build rule for target.
+environment_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 environment_test
+.PHONY : environment_test
+
+# fast build rule for target.
+environment_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/environment_test.dir/build.make test/CMakeFiles/environment_test.dir/build
+.PHONY : environment_test/fast
+
 Client.o: Client.cpp.o
 .PHONY : Client.o
 
@@ -488,6 +501,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... environment_test"
 	@echo "... gamer_club"
 	@echo "... input_test"
 	@echo "... parser_test"
