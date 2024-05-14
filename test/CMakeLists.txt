@@ -32,3 +32,18 @@ add_test(
         COMMAND input_test
 )
 
+add_executable(
+        parser_test parser_test.cpp
+)
+
+target_link_libraries(
+        parser_test
+        gtest_main
+        gtest
+        source_lib
+)
+
+add_test(
+        NAME parser_test
+        COMMAND parser_test
+)

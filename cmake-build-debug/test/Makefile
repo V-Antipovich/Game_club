@@ -154,6 +154,20 @@ input_test/fast:
 	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/build
 .PHONY : input_test/fast
 
+# Convenience name for target.
+test/CMakeFiles/parser_test.dir/rule:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/parser_test.dir/rule
+.PHONY : test/CMakeFiles/parser_test.dir/rule
+
+# Convenience name for target.
+parser_test: test/CMakeFiles/parser_test.dir/rule
+.PHONY : parser_test
+
+# fast build rule for target.
+parser_test/fast:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/build
+.PHONY : parser_test/fast
+
 input_test.o: input_test.cpp.o
 .PHONY : input_test.o
 
@@ -177,6 +191,30 @@ input_test.s: input_test.cpp.s
 input_test.cpp.s:
 	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/input_test.cpp.s
 .PHONY : input_test.cpp.s
+
+parser_test.o: parser_test.cpp.o
+.PHONY : parser_test.o
+
+# target to build an object file
+parser_test.cpp.o:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/parser_test.cpp.o
+.PHONY : parser_test.cpp.o
+
+parser_test.i: parser_test.cpp.i
+.PHONY : parser_test.i
+
+# target to preprocess a source file
+parser_test.cpp.i:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/parser_test.cpp.i
+.PHONY : parser_test.cpp.i
+
+parser_test.s: parser_test.cpp.s
+.PHONY : parser_test.s
+
+# target to generate assembly for a file
+parser_test.cpp.s:
+	cd /home/vitalii/Documents/Programming/cpp/Game_club/cmake-build-debug && $(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/parser_test.cpp.s
+.PHONY : parser_test.cpp.s
 
 timestamp_test.o: timestamp_test.cpp.o
 .PHONY : timestamp_test.o
@@ -212,10 +250,14 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... input_test"
+	@echo "... parser_test"
 	@echo "... timestamp_test"
 	@echo "... input_test.o"
 	@echo "... input_test.i"
 	@echo "... input_test.s"
+	@echo "... parser_test.o"
+	@echo "... parser_test.i"
+	@echo "... parser_test.s"
 	@echo "... timestamp_test.o"
 	@echo "... timestamp_test.i"
 	@echo "... timestamp_test.s"

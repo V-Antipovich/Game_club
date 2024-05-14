@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/parser_test.dir/parser_test.cpp.o -o parser_test  -lgtest_main -lgtest ../libsource_lib.a 

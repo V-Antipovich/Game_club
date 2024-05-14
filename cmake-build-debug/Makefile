@@ -178,6 +178,19 @@ input_test/fast:
 	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/input_test.dir/build.make test/CMakeFiles/input_test.dir/build
 .PHONY : input_test/fast
 
+#=============================================================================
+# Target rules for targets named parser_test
+
+# Build rule for target.
+parser_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 parser_test
+.PHONY : parser_test
+
+# fast build rule for target.
+parser_test/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/parser_test.dir/build.make test/CMakeFiles/parser_test.dir/build
+.PHONY : parser_test/fast
+
 Client.o: Client.cpp.o
 .PHONY : Client.o
 
@@ -477,6 +490,7 @@ help:
 	@echo "... test"
 	@echo "... gamer_club"
 	@echo "... input_test"
+	@echo "... parser_test"
 	@echo "... source_lib"
 	@echo "... timestamp_test"
 	@echo "... Client.o"

@@ -13,6 +13,9 @@ int main(int argc, char* argv[]) {
     } catch (const ParserConsoleException& pce) {
         std::cout<<"Чтобы программа корректно выполнилась, ей на вход необходимо предоставить один аргумент - путь до файла\n"
                    "Файл должен существовать и быть с расширением .txt";
+    } catch (const ParserFileError& pfe) {
+        // Файл существует и открыт успешно, но формат неправильный: выводится строка с ошибкой
+        std::cout<<pfe.what()<<"\n";
     }
     return 0;
 }

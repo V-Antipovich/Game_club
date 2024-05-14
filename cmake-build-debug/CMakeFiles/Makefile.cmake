@@ -53,4 +53,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/gamer_club.dir/DependInfo.cmake"
   "test/CMakeFiles/timestamp_test.dir/DependInfo.cmake"
   "test/CMakeFiles/input_test.dir/DependInfo.cmake"
+  "test/CMakeFiles/parser_test.dir/DependInfo.cmake"
   )
